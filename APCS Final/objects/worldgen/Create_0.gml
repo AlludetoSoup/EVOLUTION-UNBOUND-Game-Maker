@@ -367,7 +367,7 @@ function check_square_B(X,Y){
 
 
 show_debug_message("starting double check for biomes")
-for (var l = 0; l < 1; l++){
+for (var l = 0; l < 3; l++){
 
 		for (var cellX = 0; cellX < gridWidth; cellX++) {
 		    for (var cellY = 0; cellY < gridHeight; cellY++) {
