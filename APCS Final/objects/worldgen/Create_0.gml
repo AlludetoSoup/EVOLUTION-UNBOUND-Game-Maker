@@ -214,21 +214,35 @@ for (var l = 0; l < 10; l++){
 				}
 
 				if most >= 5 {
-					fixed += 1
 					if 	loc = 0{
+						if terrainGrid[# cellX, cellY]!= "water" {
 						terrainGrid[# cellX, cellY] = "water"	
+						fixed += 1
+						}
 					}
 					if 	loc = 1{
-						terrainGrid[# cellX, cellY] = "sand"	
+						if terrainGrid[# cellX, cellY]!= "sand" {
+						terrainGrid[# cellX, cellY] = "sand"
+						fixed += 1
+						}
 					}
 					if 	loc = 2{
-						terrainGrid[# cellX, cellY] = "grass"	
+						if terrainGrid[# cellX, cellY]!= "grass" {
+						terrainGrid[# cellX, cellY] = "grass"
+						fixed += 1
+						}
 					}
 					if 	loc = 3{
-						terrainGrid[# cellX, cellY] = "mountain"	
+						if terrainGrid[# cellX, cellY]!= "mountain" {
+						terrainGrid[# cellX, cellY] = "mountain"
+						fixed += 1
+						}
 					}
 					if 	loc = 4{
-						terrainGrid[# cellX, cellY] = "snow"	
+						if terrainGrid[# cellX, cellY]!= "snow" {
+						terrainGrid[# cellX, cellY] = "snow"
+						fixed += 1
+						}
 					}
 				}
 				order = [0,0,0,0,0]
@@ -237,9 +251,7 @@ for (var l = 0; l < 10; l++){
 		}
 }
 
-show_debug_message("Fixed ")
-show_debug_message(fixed)
-show_debug_message(" Mistakes")
+
 
 
 
@@ -328,5 +340,138 @@ for (var cellX = 0; cellX < gridWidth; cellX++) {
 }
 
 
+function check_square_B(X,Y){
+	var tile=  biomeGrid[# X,Y]
+	switch (tile) {
+		case "cold ocean":
+			return 0
+         case "warm ocean":
+                return 1
+		case "tundra":
+                return 2
+		case "forest":
+                return 3
+		case "savanna":
+				return 4
+		case "mountain":
+				return 5
+		case "snow":
+				return 6
+		case "desert":
+				return 7
+		case "beach":
+				return 8
+			
+}
+}
+
+
+show_debug_message("starting double check for biomes")
+for (var l = 0; l < 1; l++){
+
+		for (var cellX = 0; cellX < gridWidth; cellX++) {
+		    for (var cellY = 0; cellY < gridHeight; cellY++) {
+				order = [0,0,0,0,0,0,0,0,0]
+				if cellX > 0 {
+					order[check_square_B(cellX-1,cellY)] +=1
+				}
+				if cellX < (world_size/100)-1 {
+					order[check_square_B(cellX+1,cellY)] +=1
+				}
+				if cellY > 0 {		
+					order[check_square_B(cellX,cellY-1)] +=1
+				}
+				if cellY < (world_size/100)-1 {
+					order[check_square_B(cellX,cellY+1)] +=1
+				}
 		
+				if cellX > 0 and cellY > 0 {
+					order[check_square_B(cellX-1,cellY-1)] +=1
+				}
+				if cellX < (world_size/100)-1 and cellY < (world_size/100)-1 {
+					order[check_square_B(cellX+1,cellY+1)] +=1	
+				}
+				if cellX > 0 and cellY < (world_size/100)-1 {
+					order[check_square_B(cellX-1,cellY+1)] +=1	
+				}
+				if cellX < (world_size/100)-1 and cellY > 0 {
+					order[check_square_B(cellX+1,cellY-1)] +=1	
+				}
+				if cellY = 2  and cellX = 2{
+				}
 		
+				most = 0
+				loc = 0
+				for (var i =0; i <7;i++) {
+					if order[i] > most {
+						most = order[i]
+						loc = i
+					}
+				}
+				if cellY = 2  and cellX = 2{
+				}
+
+				if most >= 6 {
+					if 	loc = 0{
+						if terrainGrid[# cellX, cellY]!= "cold_ocean" {
+						terrainGrid[# cellX, cellY] = "cold_ocean"
+						fixed += 1
+						}
+					}
+					if 	loc = 1{
+						if terrainGrid[# cellX, cellY]!= "warm_ocean"{
+						terrainGrid[# cellX, cellY] = "warm_ocean"
+						fixed += 1
+						}
+					}
+					if 	loc = 2{
+						if terrainGrid[# cellX, cellY]!= "tundra"{
+						terrainGrid[# cellX, cellY] = "tundra"	
+						fixed += 1
+						}
+					}
+					if 	loc = 3{
+						if terrainGrid[# cellX, cellY]!= "forest"{
+						terrainGrid[# cellX, cellY] = "forest"
+						fixed += 1
+						}
+					}
+					if 	loc = 4{
+						if terrainGrid[# cellX, cellY]!= "savanna"{
+						terrainGrid[# cellX, cellY] = "savanna"
+						fixed += 1
+						}
+					}
+					if 	loc = 5{
+						if terrainGrid[# cellX, cellY]!= "mountain"{
+						terrainGrid[# cellX, cellY] = "mountain"
+						fixed += 1
+						}
+					}
+					if 	loc = 6{
+						if terrainGrid[# cellX, cellY]!= "snow"{
+						terrainGrid[# cellX, cellY] = "snow"
+						fixed += 1
+						}
+					}
+					if 	loc = 7{
+						if terrainGrid[# cellX, cellY]!= "desert"{
+						terrainGrid[# cellX, cellY] = "desert"
+						fixed += 1
+						}
+					}
+					if 	loc = 8{
+						if terrainGrid[# cellX, cellY]!= "beach"{
+						terrainGrid[# cellX, cellY] = "beach"
+						fixed += 1
+						}
+					}
+				}
+				order = [0,0,0,0,0,0,0,0,0]
+		
+			}
+		}
+}	
+show_debug_message("Fixed ")
+show_debug_message(fixed)
+show_debug_message(" Mistakes")	
