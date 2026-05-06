@@ -13,7 +13,7 @@ if (waiting) {
 	            targetY = clamp(targetY, 100, 9900);
 	            attempts++;
 			
-	        } until ((point_distance(x, y, targetX, targetY) > 20 and (worldgen.terrainGrid[# floor(targetX/100), floor(targetY/100)] = "tundra" or worldgen.terrainGrid[# floor(targetX/100), floor(targetY/100)] = "forest")) or attempts > 10);
+	        } until ((point_distance(x, y, targetX, targetY) > 20 and (worldgen.terrainGrid[# floor(targetX/100), floor(targetY/100)] = "tundra" or worldgen.terrainGrid[# floor(targetX/100), floor(targetY/100)] = "forest")) or attempts > 50);
 		}
 		else {
 			do {
