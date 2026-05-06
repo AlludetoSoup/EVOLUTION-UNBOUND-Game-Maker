@@ -9,3 +9,7 @@ day = (total_mins % (60*24*365)) / (60*24)
 total_mins -= day*(60*24)
 year = total_mins / (60*365*24)
 rate = rates[rate_pos]
+
+
+show_debug_message("smart: "+string(global.smartnum))
+show_debug_message("dumb: "+string(global.dumbnum))

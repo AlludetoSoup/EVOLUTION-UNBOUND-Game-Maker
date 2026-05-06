@@ -3,33 +3,53 @@ if (waiting) {
     if (wait_timer >= 180) {
         wait_timer = 0;
         waiting = false;
-		movex = irandom_range(-3, 3);
-		movey = irandom_range(-3, 3);
-        targetX = x + movex
-        targetY = y + movey
-		targetX = clamp(targetX, 100, 9900)
-        targetY = clamp(targetY, 100, 9900)
-		show_debug_message(string(movex)+","+string(movey))
-    }
+        
+        var attempts = 0;
+		if smart = 1 {
+	        do {
+	            targetX = x + irandom_range(-300, 300);
+	            targetY = y + irandom_range(-300, 300);
+	            targetX = clamp(targetX, 100, 9900);
+	            targetY = clamp(targetY, 100, 9900);
+	            attempts++;
+			
+	        } until ((point_distance(x, y, targetX, targetY) > 20 and (worldgen.terrainGrid[# floor(targetX/100), floor(targetY/100)] = "tundra" or worldgen.terrainGrid[# floor(targetX/100), floor(targetY/100)] = "forest")) or attempts > 10);
+		}
+		else {
+			do {
+	            targetX = x + irandom_range(-300, 300);
+	            targetY = y + irandom_range(-300, 300);
+	            targetX = clamp(targetX, 100, 9900);
+	            targetY = clamp(targetY, 100, 9900);
+	            attempts++;
+			
+	        } until (point_distance(x, y, targetX, targetY) > 20 or attempts > 10);
+		}
+	}
 } else {
     var dist = point_distance(x, y, targetX, targetY);
-    if (dist < 2) {
+    if (dist < 10) {
         x = targetX;
         y = targetY;
-        var tile = worldgen.terrainGrid[# floor(x / 100), floor(y / 100)];
-		show_debug_message(string(tile + " " + string(x) + "," + string(y)))
+        var cellX = floor(x / 100);
+        var cellY = floor(y / 100);
+        var tile = worldgen.terrainGrid[# cellX, cellY];
         if (tile == "forest" or tile == "tundra") {
-            var cellX = floor(x / 100);
-			var cellY = floor(y / 100);
-			show_debug_message("attempted swap from "+tile+" to sand at "+string(cellX)+","+string(cellY)+".") 
-			with (worldgen) {
-			    terrainGrid[# cellX, cellY] = "sand";
-				biomeGrid[# cellX, cellY] = "desert";
+			if smart = 1 {
+	            with (worldgen) {
+	                terrainGrid[# cellX, cellY] = "sand";
+					biomeGrid[# cellX, cellY] = "smartdesert";
+	            }
+			} else {
+				with (worldgen) {
+	                terrainGrid[# cellX, cellY] = "sand";
+					biomeGrid[# cellX, cellY] = "dumbdesert";
+	            }
 			}
-			show_debug_message("tile is now "+worldgen.terrainGrid[# floor(x / 100), floor(y / 100)]+".")
         }
         waiting = true;
+        wait_timer = 0;
     } else {
-		move_towards_point(targetX, targetY, 10)
+        move_towards_point(targetX, targetY, 10);
     }
 }

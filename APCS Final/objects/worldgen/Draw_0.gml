@@ -44,6 +44,12 @@ for (var cellX = 0; cellX < gridWidth; cellX++) {
 			case "beach":
                 draw_set_color(c_yellow);
                 break;
+			case "smartdesert":
+				draw_set_color(c_fuchsia);
+				break;
+			case "dumbdesert":
+				draw_set_color(c_black);
+				break;
         }
 
         draw_rectangle(drawX, drawY, drawX + tileSize, drawY + tileSize, false);
