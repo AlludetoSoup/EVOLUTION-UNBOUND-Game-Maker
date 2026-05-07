@@ -23,7 +23,7 @@ if (waiting) {
 	            targetY = clamp(targetY, 100, 9900);
 	            attempts++;
 			
-	        } until (point_distance(x, y, targetX, targetY) > 20 or attempts > 10);
+	        } until (point_distance(x, y, targetX, targetY) > 20 or attempts > 50);
 		}
 	}
 } else {
