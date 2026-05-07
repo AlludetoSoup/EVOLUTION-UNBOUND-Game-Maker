@@ -5,7 +5,7 @@
     {"name":"obj_grass","order":7,"path":"objects/obj_grass/obj_grass.yy",},
     {"name":"obj_time_controller","order":10,"path":"objects/obj_time_controller/obj_time_controller.yy",},
     {"name":"obj_water","order":5,"path":"objects/obj_water/obj_water.yy",},
-    {"name":"worldgen","order":4,"path":"objects/worldgen/worldgen.yy",},
+    {"name":"obj_worldgen","order":4,"path":"objects/obj_worldgen/obj_worldgen.yy",},
     {"name":"spr_bg","order":13,"path":"sprites/spr_bg/spr_bg.yy",},
     {"name":"spr_dirt","order":3,"path":"sprites/spr_dirt/spr_dirt.yy",},
     {"name":"spr_grass","order":2,"path":"sprites/spr_grass/spr_grass.yy",},

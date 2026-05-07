@@ -3,7 +3,7 @@
 rate = obj_camera.size/1000
 
 if keyboard_check(vk_right){
-	if x+(10*rate) <=worldgen.world_size-obj_camera.size/2 {
+	if x+(10*rate) <=obj_worldgen.world_size-obj_camera.size/2 {
 		x+= (10*rate)
 	}
 }
@@ -18,7 +18,7 @@ if keyboard_check(vk_up){
 	}
 }
 if keyboard_check(vk_down){
-	if y+(10*rate) <=worldgen.world_size-obj_camera.size/2 {
+	if y+(10*rate) <=obj_worldgen.world_size-obj_camera.size/2 {
 	y+= (10*rate)
 	}
 }
@@ -33,9 +33,9 @@ x = obj_camera.size/2
 if obj_camera.size/2 > y {
 y = obj_camera.size/2	
 }
-if worldgen.world_size-obj_camera.size/2 < x {
-	x = worldgen.world_size-obj_camera.size/2
+if obj_worldgen.world_size-obj_camera.size/2 < x {
+	x = obj_worldgen.world_size-obj_camera.size/2
 }
-if worldgen.world_size-obj_camera.size/2 < y {
-	y = worldgen.world_size-obj_camera.size/2
+if obj_worldgen.world_size-obj_camera.size/2 < y {
+	y = obj_worldgen.world_size-obj_camera.size/2
 }
