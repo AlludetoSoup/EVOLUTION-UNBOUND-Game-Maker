@@ -8,8 +8,10 @@ day = 1
 hour = 0 
 minute = 0 
 rate_pos = 1
-rates = [1,5,25,100,1000,1000000]
-temp_increases = [5,15,-5,-15]
+rates = [1,5,25,100,1000]
+temp_increase = -14.260274
+last_day = 0
+
 
 global.smartnum = 0
 global.dumbnum = 0
