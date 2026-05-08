@@ -108,6 +108,14 @@ gridHeight = world_size/100
 terrainGrid = ds_grid_create(gridWidth, gridHeight)
 tempGrid = ds_grid_create(gridWidth, gridHeight)
 biomeGrid = ds_grid_create(gridWidth, gridHeight)
+cloudGrid = ds_grid_create(gridWidth*5, gridHeight*5)
+rainingGrid = ds_grid_create(gridWidth*5,gridHeight*5)
+
+for (var cellX = 0; cellX < gridWidth*5; cellX++) {
+		    for (var cellY = 0; cellY < gridHeight*5; cellY++) {
+					rainingGrid[cellX,cellY] = false
+			}}
+			
 
 var noiseScale = 0.08
 
@@ -472,6 +480,61 @@ for (var l = 0; l < 3; l++){
 			}
 		}
 }	
+//cloud gen
+
+global.perm = array_create(512);
+
+var p = [];
+for (var i = 0; i < 256; i++) {
+    p[i] = i;
+}
+
+
+for (var i = 255; i > 0; i--) {
+    var j = irandom(i);
+    var temp = p[i];
+    p[i] = p[j];
+    p[j] = temp;
+}
+
+
+for (var i = 0; i < 256; i++) {
+    global.perm[i] = p[i];
+    global.perm[i + 256] = p[i];
+}
+scale = 0.05;
+
+for (var X = 0; X < 256; X++) {
+    for (var Y = 0; Y < 256; Y++) {
+        var n = perlin(X * scale, Y * scale);
+
+        n = (n + 1) * 0.5;
+
+        var col = make_color_rgb(n * 255, n * 255, n * 255);
+        draw_point_color(x, y, col);
+    }
+}
+noiseScale = 0.08
+
+for (var cellX = 0; cellX < gridWidth/5; cellX++) {
+    for (var cellY = 0; cellY < gridHeight/5; cellY++) {
+
+        var noiseValue = perlin_octaves(cellX * noiseScale, cellY * noiseScale,8, 0.5,0.5);
+
+        noiseValue = (noiseValue + 1) * 0.5;
+
+        cloudGrid[# cellX, cellY] = noiseValue;
+    }
+}
+
+
+
+
+
+
+
+
+
 show_debug_message("Fixed ")
 show_debug_message(fixed)
 show_debug_message(" Mistakes")	

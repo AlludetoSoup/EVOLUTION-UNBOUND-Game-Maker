@@ -12,3 +12,5 @@ rates = [1,5,25,100,1000,1000000]
 temp_increases = [5,15,-5,-15]
 temp_increase = -14.260274
 last_day = 0
+day_past = 0
+last_year= 0
