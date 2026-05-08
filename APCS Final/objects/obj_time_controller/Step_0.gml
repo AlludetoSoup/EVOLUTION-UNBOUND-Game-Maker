@@ -10,29 +10,12 @@ year = total_mins / (60*365*24)
 check_day = last_day
 day_past = day-last_day+365*(year-last_year)
 remaining_past = day_past
-//show_debug_message(day_past)
-while remaining_past > 0 {
-	
-	
-	
-	//ts no work and i cant figure out why, too complex for 1 brain cell to understand
-	if check_day <= 356 and check_day > 203 {
-		if check_day+remaining_past > 203 {
-			day_past_checking = 203-check_day
-			check_day = 203
-			remaining_past-= day_past_checking
-		}
-		temp_increase -= 0.08219178082*(365/153)*day_past_checking
-	}
-	else{
-		if check_day+remaining_past > 356 or check_day+remaining_past < 203 {
-			day_past_checking = 356-check_day
-			check_day = 356
-			remaining_past-= day_past_checking
-		}
-		temp_increase += 0.08219178082*(365/212)*day_past_checking
-	}
-}
+total = 0
+
+
+temp_increase = 15 * cos(((check_day - 203) / 365) * 2 * pi)
+
+
 
 last_day = day
 last_year = year
