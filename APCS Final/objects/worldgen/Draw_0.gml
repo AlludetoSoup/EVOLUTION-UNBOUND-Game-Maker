@@ -44,8 +44,7 @@ for (var cellX = 0; cellX < gridWidth; cellX++) {
 			case "beach":
                 draw_set_color(c_yellow);
                 break;
-        }
-
+		}
         draw_rectangle(drawX, drawY, drawX + tileSize, drawY + tileSize, false);
     }
 }

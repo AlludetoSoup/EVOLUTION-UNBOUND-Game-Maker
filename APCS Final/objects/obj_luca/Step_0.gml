@@ -1,0 +1,1 @@
+path_start(path, pathspeed*obj_time_controller.rate, true)
