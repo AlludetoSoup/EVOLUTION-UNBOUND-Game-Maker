@@ -13,3 +13,21 @@ for (var cellX = 0; cellX < gridWidth/5; cellX++) {
 		}
 			
 }}
+
+//if frame mod 100 finish this
+for (var cellX = 0; cellX < gridWidth/5; cellX++) {
+	for (var cellY = 0; cellY < gridHeight/5; cellY++) {
+		if cloudGrid[# cellX,cellY] > 0.7 {
+		if irandom_range((cloudGrid[# cellX,cellY]*100)-70,20){
+			rainingGrid[# cellX,cellY] = true
+				
+			
+			
+			
+			
+		}
+		}
+			
+}}
+
+frame +=1

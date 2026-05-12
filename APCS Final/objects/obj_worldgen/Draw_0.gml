@@ -7,7 +7,7 @@ var c_dark_green = $006611
 var c_puke_green = $447711
 var c_light_blue = $FFAA33
 var c_sand = $33AAFF
-
+draw_set_alpha(1)
 for (var cellX = 0; cellX < gridWidth; cellX++) {
     for (var cellY = 0; cellY < gridHeight; cellY++) {
 
@@ -47,5 +47,40 @@ for (var cellX = 0; cellX < gridWidth; cellX++) {
         }
 
         draw_rectangle(drawX, drawY, drawX + tileSize, drawY + tileSize, false);
+    }
+}
+
+
+
+
+
+
+for (var cellX = 0; cellX < gridWidth/5; cellX++) {
+    for (var cellY = 0; cellY < gridHeight/5; cellY++) {
+
+        var tileType = cloudGrid[# cellX, cellY];
+
+        var drawX = cellX * tileSize*5;
+        var drawY = cellY * tileSize*5;
+		show_debug_message(cloudGrid[# cellX, cellY])
+		draw_set_alpha(cloudGrid[# cellX, cellY])
+		draw_set_colour(c_white)
+
+        draw_rectangle(drawX, drawY, drawX + tileSize*5, drawY + tileSize*5, false);
+    }
+}
+
+
+
+for (var cellX = 0; cellX < gridWidth/5; cellX++) {
+    for (var cellY = 0; cellY < gridHeight/5; cellY++) {
+		var drawX = cellX * tileSize*5;
+        var drawY = cellY * tileSize*5;
+        var tileType = rainingGrid[# cellX, cellY];
+		draw_set_colour(c_blue)
+        if tileType { 
+
+			draw_rectangle(drawX, drawY, drawX + tileSize*5, drawY + tileSize*5, false);
+		}
     }
 }
