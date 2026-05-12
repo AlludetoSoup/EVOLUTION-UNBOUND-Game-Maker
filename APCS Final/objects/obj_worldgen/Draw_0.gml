@@ -76,9 +76,8 @@ for (var cellX = 0; cellX < gridWidth/5; cellX++) {
     for (var cellY = 0; cellY < gridHeight/5; cellY++) {
 		var drawX = cellX * tileSize*5;
         var drawY = cellY * tileSize*5;
-        var tileType = rainingGrid[# cellX, cellY];
 		draw_set_colour(c_blue)
-        if tileType { 
+        if rainingGrid[# cellX, cellY] = true { 
 
 			draw_rectangle(drawX, drawY, drawX + tileSize*5, drawY + tileSize*5, false);
 		}
