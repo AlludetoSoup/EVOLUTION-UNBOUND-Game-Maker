@@ -22,4 +22,3 @@ last_year = year
 total_mins -= day*(60*24)
 
 rate = rates[rate_pos]
-show_debug_message(temp_increase)

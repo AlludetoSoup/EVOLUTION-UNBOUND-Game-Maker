@@ -62,7 +62,7 @@ for (var cellX = 0; cellX < gridWidth/5; cellX++) {
 
         var drawX = cellX * tileSize*5;
         var drawY = cellY * tileSize*5;
-		show_debug_message(cloudGrid[# cellX, cellY])
+		
 		draw_set_alpha(cloudGrid[# cellX, cellY])
 		draw_set_colour(c_white)
 

@@ -114,7 +114,8 @@ rainingGrid = ds_grid_create(gridWidth*5,gridHeight*5)
 
 for (var cellX = 0; cellX < gridWidth*5; cellX++) {
 		    for (var cellY = 0; cellY < gridHeight*5; cellY++) {
-					rainingGrid[cellX,cellY] = false
+					rainingGrid[# cellX,cellY] = false
+					
 			}}
 			
 
