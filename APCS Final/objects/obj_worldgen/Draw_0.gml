@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-var tileSize = 25;
+var tileSize = 100;
 
 //custom colors
 var c_dark_green = $006611
@@ -20,8 +20,8 @@ cellY_max = ceil((y_+(size_/2))/100)
 
 
 
-for (var cellX = cellX_min; cellX < gridWidth; cellX++) {
-    for (var cellY = cellY_min; cellY < gridHeight; cellY++) {
+for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
+    for (var cellY = cellY_min; cellY < cellY_max; cellY++) {
 		
         var tileType = biomeGrid[# cellX, cellY];
 
@@ -70,8 +70,8 @@ cellY_max = ceil((y_+(size_/2))/500)
 
 
 
-for (var cellX = 0; cellX < gridWidth/5; cellX++) {
-    for (var cellY =0; cellY < gridHeight/5; cellY++) {
+for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
+    for (var cellY =cellY_min; cellY < cellY_max; cellY++) {
 
         var tileType = cloudGrid[# cellX, cellY];
 
@@ -87,8 +87,8 @@ for (var cellX = 0; cellX < gridWidth/5; cellX++) {
 
 
 
-for (var cellX = 0; cellX < gridWidth/5; cellX++) {
-    for (var cellY = 0; cellY < gridHeight/5; cellY++) {
+for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
+    for (var cellY = cellY_min; cellY < cellY_max; cellY++) {
 		var drawX = cellX * tileSize*5;
         var drawY = cellY * tileSize*5;
 		draw_set_colour(c_blue)
