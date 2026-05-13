@@ -20,8 +20,8 @@ cellY_max = ceil((y_+(size_/2))/100)
 
 
 
-for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
-    for (var cellY = cellY_min; cellY < cellY_max; cellY++) {
+for (var cellX = cellX_min; cellX < gridWidth; cellX++) {
+    for (var cellY = cellY_min; cellY < gridHeight; cellY++) {
 		
         var tileType = biomeGrid[# cellX, cellY];
 
