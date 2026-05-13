@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-world_size = 10000
+world_size = 40000
 room_set_width(Room1,world_size)
 room_set_height(Room1,world_size)
 randomise()

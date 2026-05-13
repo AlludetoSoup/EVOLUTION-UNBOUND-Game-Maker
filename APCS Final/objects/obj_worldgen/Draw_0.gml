@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-var tileSize = 100;
+var tileSize = 25;
 
 //custom colors
 var c_dark_green = $006611
