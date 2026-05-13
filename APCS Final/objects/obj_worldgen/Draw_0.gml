@@ -8,9 +8,21 @@ var c_puke_green = $447711
 var c_light_blue = $FFAA33
 var c_sand = $33AAFF
 draw_set_alpha(1)
-for (var cellX = 0; cellX < gridWidth; cellX++) {
-    for (var cellY = 0; cellY < gridHeight; cellY++) {
 
+x_ = obj_camera.x
+y_ = obj_camera.y
+size_ = obj_camera.size
+
+cellX_min = floor((x_-(size_/2))/100)
+cellY_min = floor((y_-(size_/2))/100)
+cellX_max = ceil((x_+(size_/2))/100)
+cellY_max = ceil((y_+(size_/2))/100)
+
+
+
+for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
+    for (var cellY = cellY_min; cellY < cellY_max; cellY++) {
+		
         var tileType = biomeGrid[# cellX, cellY];
 
         var drawX = cellX * tileSize;
@@ -51,12 +63,15 @@ for (var cellX = 0; cellX < gridWidth; cellX++) {
 }
 
 
-
+cellX_min = ceil((x_-(size_/2))/500)
+cellY_min = ceil((y_-(size_/2))/500)
+cellX_max = ceil((x_+(size_/2))/500)
+cellY_max = ceil((y_+(size_/2))/500)
 
 
 
 for (var cellX = 0; cellX < gridWidth/5; cellX++) {
-    for (var cellY = 0; cellY < gridHeight/5; cellY++) {
+    for (var cellY =0; cellY < gridHeight/5; cellY++) {
 
         var tileType = cloudGrid[# cellX, cellY];
 
