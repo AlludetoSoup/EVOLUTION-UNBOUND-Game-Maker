@@ -63,9 +63,7 @@ for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
 				rainingGrid[# cellX,cellY] = false
 			}
 		}
-		if cellY = 1 and cellX = 1 {
-			show_debug_message(cloudGrid[# 1,1])	
-		}
+		
 		if cloudGrid[# cellX,cellY] < 0 {
 			cloudGrid[# cellX,cellY] = 0
 			rainingGrid[# cellX,cellY] = false
@@ -135,9 +133,7 @@ for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
 				rainingGrid[# cellX,cellY] = false
 			}
 		}
-		if cellY = 1 and cellX = 1 {
-			show_debug_message(cloudGrid[# 1,1])	
-		}
+		
 		if cloudGrid[# cellX,cellY] < 0 {
 			cloudGrid[# cellX,cellY] = 0
 			rainingGrid[# cellX,cellY] = false
