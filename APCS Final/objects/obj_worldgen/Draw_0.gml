@@ -63,8 +63,8 @@ for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
 }
 
 
-cellX_min = ceil((x_-(size_/2))/500)
-cellY_min = ceil((y_-(size_/2))/500)
+cellX_min = floor((x_-(size_/2))/500)
+cellY_min = floor((y_-(size_/2))/500)
 cellX_max = ceil((x_+(size_/2))/500)
 cellY_max = ceil((y_+(size_/2))/500)
 
