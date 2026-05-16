@@ -1,9 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"Object7",
-  "eventList":[],
+  "%Name":"obj_food",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_amoeba","path":"objects/obj_amoeba/obj_amoeba.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"Object7",
+  "name":"obj_food",
   "overriddenProperties":[],
   "parent":{
     "name":"APCS Final",
@@ -27,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_food",
+    "path":"sprites/spr_food/spr_food.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

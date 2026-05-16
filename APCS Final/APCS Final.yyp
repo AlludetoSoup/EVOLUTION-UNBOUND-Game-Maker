@@ -21,6 +21,7 @@
   "resources":[
     {"id":{"name":"obj_amoeba","path":"objects/obj_amoeba/obj_amoeba.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
+    {"id":{"name":"obj_food","path":"objects/obj_food/obj_food.yy",},},
     {"id":{"name":"obj_grass","path":"objects/obj_grass/obj_grass.yy",},},
     {"id":{"name":"obj_time_controller","path":"objects/obj_time_controller/obj_time_controller.yy",},},
     {"id":{"name":"obj_water","path":"objects/obj_water/obj_water.yy",},},
@@ -29,6 +30,7 @@
     {"id":{"name":"spr_amoeba","path":"sprites/spr_amoeba/spr_amoeba.yy",},},
     {"id":{"name":"spr_bg","path":"sprites/spr_bg/spr_bg.yy",},},
     {"id":{"name":"spr_dirt","path":"sprites/spr_dirt/spr_dirt.yy",},},
+    {"id":{"name":"spr_food","path":"sprites/spr_food/spr_food.yy",},},
     {"id":{"name":"spr_grass","path":"sprites/spr_grass/spr_grass.yy",},},
     {"id":{"name":"spr_snow","path":"sprites/spr_snow/spr_snow.yy",},},
     {"id":{"name":"spr_stone","path":"sprites/spr_stone/spr_stone.yy",},},
