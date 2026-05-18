@@ -1,10 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
-world_size = 40000
+world_size = 10000
 room_set_width(Room1,world_size)
 room_set_height(Room1,world_size)
 randomise()
 frame = 0
+landGrid = mp_grid_create(0, 0, world_size/100, world_size/100, 100, 100)
 //x=0
 //y=0
 //for (var i = 0; i < (world_size/100)*(world_size/100); i+=1) {
