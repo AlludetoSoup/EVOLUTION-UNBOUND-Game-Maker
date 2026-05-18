@@ -27,6 +27,7 @@
     {"id":{"name":"obj_water","path":"objects/obj_water/obj_water.yy",},},
     {"id":{"name":"obj_worldgen","path":"objects/obj_worldgen/obj_worldgen.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"scr_gene_transfer","path":"scripts/scr_gene_transfer/scr_gene_transfer.yy",},},
     {"id":{"name":"spr_amoeba","path":"sprites/spr_amoeba/spr_amoeba.yy",},},
     {"id":{"name":"spr_bg","path":"sprites/spr_bg/spr_bg.yy",},},
     {"id":{"name":"spr_dirt","path":"sprites/spr_dirt/spr_dirt.yy",},},
