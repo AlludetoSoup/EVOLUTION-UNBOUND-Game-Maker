@@ -2,7 +2,7 @@ if hungry > 0 {
 	hungry -= obj_time_controller.rate/hungerspeed*0.1
 }
 else {
-	Health -= obj_time_controller.rate
+	Health -= obj_time_controller.rate/starvationtime
 }
 if Health <= 0 {
 	instance_destroy(self)

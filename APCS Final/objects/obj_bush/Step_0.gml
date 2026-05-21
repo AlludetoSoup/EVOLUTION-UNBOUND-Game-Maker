@@ -11,8 +11,9 @@ while grow_timer >= 744 and stage != 5{
 	check_spr()
 	grow_timer-=744
 }
-
 if check = 1 {
+	show_debug_message("checked")
+	stage = 1
 	grow_timer = 0
 	check_spr()
 	check = 0

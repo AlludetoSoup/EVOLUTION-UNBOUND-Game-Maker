@@ -19,7 +19,8 @@ intuition = 100 //used for finding stuff outside of sense range
 accuracy = 1 //higer this # is, the more accurate organism's senses are (use fractions for less accuracy)
 curiosity = 100 //more wandering
 hungertime = 250 //aka max hunger
-hungerspeed = 10 //bigger # = slower hungering
+hungerspeed = 5 //bigger # = slower hungering
+starvationtime = 20 //bigger # = slower starvation
 sight = 5
 smell = 10
 skin = 10
@@ -27,5 +28,5 @@ skin_extrusion = 0
 muscle_mass_limb = 10
 offspring = 1
 sex=irandom(1)
-traits=[Health,height,width,strength,agility,breath,intelligence,intuition,accuracy,curiosity,hungertime,hungerspeed,sight,smell,skin,skin_extrusion,muscle_mass_limb,offspring]
+traits=[Health,height,width,strength,agility,breath,intelligence,intuition,accuracy,curiosity,hungertime,hungerspeed,starvationtime,sight,smell,skin,skin_extrusion,muscle_mass_limb,offspring]
 hungry = hungertime
