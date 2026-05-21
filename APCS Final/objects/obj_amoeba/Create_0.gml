@@ -1,7 +1,7 @@
-pathspeed = 25
+pathspeed = 1
 path = path_add()
-pathx = 4000
-pathy = 4000
+pathx = x
+pathy = y
 pot_target = 0
 mp_potential_settings(45, 5, 5, 0)
 mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)

@@ -1,5 +1,5 @@
 if hungry > 0 {
-	hungry -= obj_time_controller.rate/hungerspeed
+	hungry -= obj_time_controller.rate/hungerspeed*0.1
 }
 else {
 	Health -= obj_time_controller.rate
@@ -8,7 +8,7 @@ if Health <= 0 {
 	instance_destroy(self)
 }
 image_yscale = height/10
-if path_position = 1 and hungry < hungertime/2 {
+if path_position = 1 and hungry < hungertime { //change to hungertime/2 after testing
 	pot_target = instance_nearest(x, y, obj_bush)
 	if pot_target.sprite_index = spr_bush_l5 or pot_target.sprite_index = spr_bush_l4 {
 		if point_in_circle(pot_target.x, pot_target.y, x, y, sight*100) {
