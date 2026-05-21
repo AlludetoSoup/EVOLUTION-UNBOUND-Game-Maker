@@ -143,6 +143,10 @@ for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
 			rainingGrid[# cellX,cellY] = true
 		}
 		
+		
+		
+		
+		
 			
 }}
 }

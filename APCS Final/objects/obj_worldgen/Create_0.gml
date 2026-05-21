@@ -530,9 +530,33 @@ for (var cellX = 0; cellX < gridWidth/5; cellX++) {
     }
 }
 
+for (var cellX = 0; cellX < gridWidth; cellX++) {
+	for (var cellY = 0; cellY < gridHeight; cellY++) {
 
-
-
+		if biomeGrid[# cellX,cellY]= "tundra" or biomeGrid[# cellX,cellY] = "forest" or biomeGrid[# cellX,cellY] = "savanna" or biomeGrid[# cellX,cellY] = "desert"{
+			num = irandom(100)
+			if biomeGrid[# cellX,cellY]= "tundra" and num > 97 {
+				instance_create_layer(cellX*100+50,cellY*100+50,"Instances_1", obj_bush)
+			}
+			else if biomeGrid[# cellX,cellY]= "forest" and num > 95 {
+				instance_create_layer(cellX*100+50,cellY*100+50,"Instances_1", obj_bush)
+			}
+			else if biomeGrid[# cellX,cellY]= "tundra" and num < 5 {
+				instance_create_layer(cellX*100+50,cellY*100+50,"Instances_1", obj_tree)
+			}
+			else if biomeGrid[# cellX,cellY]= "forest" and num < 10 {
+				instance_create_layer(cellX*100+50,cellY*100+50,"Instances_1", obj_tree)
+			}
+			else if biomeGrid[# cellX,cellY]= "savanna" and num < 4 {
+				instance_create_layer(cellX*100+50,cellY*100+50,"Instances_1", obj_tree)
+			}
+			else if biomeGrid[# cellX,cellY]= "desert" and num < 3 {
+				placed = instance_create_layer(cellX*100+50,cellY*100+50,"Instances_1", obj_tree)
+				placed.sprite_index = spr_cactus
+			}
+			
+		}
+}}
 
 
 
