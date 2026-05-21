@@ -6,6 +6,7 @@ room_set_height(Room1,world_size)
 randomise()
 frame = 0
 landGrid = mp_grid_create(0, 0, world_size/100, world_size/100, 100, 100)
+show_cloud = false
 //x=0
 //y=0
 //for (var i = 0; i < (world_size/100)*(world_size/100); i+=1) {
@@ -115,7 +116,7 @@ rainingGrid = ds_grid_create(gridWidth*5,gridHeight*5)
 
 for (var cellX = 0; cellX < gridWidth*5; cellX++) {
 		    for (var cellY = 0; cellY < gridHeight*5; cellY++) {
-					rainingGrid[# cellX,cellY] = false
+					rainingGrid[# cellX,cellY] = 0
 					
 			}}
 			
@@ -565,3 +566,16 @@ for (var cellX = 0; cellX < gridWidth; cellX++) {
 show_debug_message("Fixed ")
 show_debug_message(fixed)
 show_debug_message(" Mistakes")	
+
+function avg_temp(start_x,start_y) {
+	total = 0
+	for (var cellX = start_x*5; cellX < start_y*5+5; cellX++) {
+		for (var cellY = start_y*5; cellY < start_y*5+5; cellY++) {
+			total += tempGrid[# cellX,cellY]
+			
+			
+		}
+	}
+	return(total/25)
+}
+

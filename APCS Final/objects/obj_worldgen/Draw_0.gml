@@ -69,20 +69,21 @@ cellX_max = ceil((x_+(size_/2))/500)
 cellY_max = ceil((y_+(size_/2))/500)
 
 
+if show_cloud {
+	for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
+	    for (var cellY =cellY_min; cellY < cellY_max; cellY++) {
 
-for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
-    for (var cellY =cellY_min; cellY < cellY_max; cellY++) {
+	        var tileType = cloudGrid[# cellX, cellY];
 
-        var tileType = cloudGrid[# cellX, cellY];
-
-        var drawX = cellX * tileSize*5;
-        var drawY = cellY * tileSize*5;
+	        var drawX = cellX * tileSize*5;
+	        var drawY = cellY * tileSize*5;
 		
-		draw_set_alpha(cloudGrid[# cellX, cellY])
-		draw_set_colour(c_white)
+			draw_set_alpha(cloudGrid[# cellX, cellY])
+			draw_set_colour(c_white)
 
-        draw_rectangle(drawX, drawY, drawX + tileSize*5, drawY + tileSize*5, false);
-    }
+	        draw_rectangle(drawX, drawY, drawX + tileSize*5, drawY + tileSize*5, false)
+	    }
+	}
 }
 
 
@@ -92,9 +93,14 @@ for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
 		var drawX = cellX * tileSize*5;
         var drawY = cellY * tileSize*5;
 		draw_set_colour(c_blue)
-        if rainingGrid[# cellX, cellY] = true { 
-
+        if rainingGrid[# cellX, cellY] = 1 { 
+			draw_rectangle(drawX, drawY, drawX + tileSize*5, drawY + tileSize*5, false);
+			
+		}
+		else if rainingGrid[# cellX, cellY] = 2 { 
+			draw_set_colour(c_white)
 			draw_rectangle(drawX, drawY, drawX + tileSize*5, drawY + tileSize*5, false);
 		}
+		
     }
 }
