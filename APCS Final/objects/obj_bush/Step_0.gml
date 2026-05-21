@@ -12,3 +12,8 @@ while grow_timer >= 744 and stage != 5{
 	grow_timer-=744
 }
 
+if check = 1 {
+	grow_timer = 0
+	check_spr()
+	check = 0
+}

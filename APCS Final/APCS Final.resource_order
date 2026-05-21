@@ -10,6 +10,7 @@
     {"name":"obj_water","order":5,"path":"objects/obj_water/obj_water.yy",},
     {"name":"obj_worldgen","order":4,"path":"objects/obj_worldgen/obj_worldgen.yy",},
     {"name":"scr_gene_transfer","order":16,"path":"scripts/scr_gene_transfer/scr_gene_transfer.yy",},
+    {"name":"scr_locate","order":27,"path":"scripts/scr_locate/scr_locate.yy",},
     {"name":"spr_bg","order":13,"path":"sprites/spr_bg/spr_bg.yy",},
     {"name":"spr_bush_l1","order":17,"path":"sprites/spr_bush_l1/spr_bush_l1.yy",},
     {"name":"spr_bush_l2","order":18,"path":"sprites/spr_bush_l2/spr_bush_l2.yy",},

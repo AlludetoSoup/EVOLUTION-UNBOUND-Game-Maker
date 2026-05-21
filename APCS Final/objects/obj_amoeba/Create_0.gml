@@ -17,7 +17,7 @@ breath = 10
 intelligence = 100 //like iq
 intuition = 100 //used for finding stuff outside of sense range
 accuracy = 1 //higer this # is, the more accurate organism's senses are (use fractions for less accuracy)
-curiosity = 10 //more wandering
+curiosity = 100 //more wandering
 hungertime = 250 //aka max hunger
 hungerspeed = 10 //bigger # = slower hungering
 sight = 5
