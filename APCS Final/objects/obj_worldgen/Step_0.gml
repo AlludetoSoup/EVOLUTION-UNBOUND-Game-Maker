@@ -153,3 +153,7 @@ for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
 
 frame +=1
 }
+
+
+
+show_debug_message(instance_number(obj_amoeba))

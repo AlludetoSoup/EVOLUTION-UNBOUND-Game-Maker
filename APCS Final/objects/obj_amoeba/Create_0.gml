@@ -26,5 +26,6 @@ skin = 10
 skin_extrusion = 0
 muscle_mass_limb = 10
 offspring = 1
+sex=irandom(1)
 traits=[Health,height,width,strength,agility,breath,intelligence,intuition,accuracy,curiosity,hungertime,hungerspeed,sight,smell,skin,skin_extrusion,muscle_mass_limb,offspring]
 hungry = hungertime
