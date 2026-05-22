@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-if sex=0{
-	
-	bum=scr_gene_transfer(traits,locate(obj_amoeba,"sex",1,self,0,0))
-	}
+image_xscale = 0.3
+image_yscale = 0.3
+x = 1000

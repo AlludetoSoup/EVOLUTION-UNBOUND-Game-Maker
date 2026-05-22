@@ -50,3 +50,5 @@ if  path_position = 1 {
 		path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 	}
 }
+
+show_debug_message(instance_number(obj_amoeba))
