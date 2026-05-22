@@ -1,17 +1,19 @@
-// 1. Setup your prompt text (Keep it simple: letters and spaces only, no symbols)
-var animal_description = "three eyed lizard with wings";
+// 1. Setup your prompt text (No punctuation symbols)
+var animal_description = "shark with laser";
 var base_prompt = animal_description + " 16-bit pixel art sprite 2d video game asset side profile view flat colors clean edges isolated on a solid black background";
-
-// 2. Safely format spaces for the web URL
 var encoded_prompt = string_replace_all(base_prompt, " ", "%20");
 
-// 3. THE CORRECT ENDPOINT (Verified: No keys, no headers required)
-var url = "https://gen.pollinations.ai/image/" + encoded_prompt + "?width=512&height=512&nologo=true&enhance=false";
+// REPLACE THIS WITH YOUR WORKING API KEY (The one with the 5 image budget)
+var my_api_key = "sk_iUkFIUkdKGYEO8OFmYb9zfy6bcm9ryy6"; 
 
-// 4. Force the target destination directly into GameMaker's virtual sandbox
+// 2. THE VALIDATED OFFICIAL ENDPOINT STRUCTURE
+// Changed model parameter to "flux" to match their system registry
+var url = "https://gen.pollinations.ai/image/" + encoded_prompt + "?width=512&height=512&nologo=true&enhance=false&model=zimage&key=" + my_api_key;
+
+// 3. Force target file destination into GameMaker sandbox workspace
 target_file_path = working_directory + "temp_sprite.png";
 
-// 5. Download the file ANONYMOUSLY using http_get_file
+// 4. Download natively using http_get_file
 request_id = http_get_file(url, target_file_path);
 
 sprite_ready = false;
