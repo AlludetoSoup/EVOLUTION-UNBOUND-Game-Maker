@@ -1,1 +1,1 @@
-scr_gene_transfer(traits,traits)
+instance_destroy()

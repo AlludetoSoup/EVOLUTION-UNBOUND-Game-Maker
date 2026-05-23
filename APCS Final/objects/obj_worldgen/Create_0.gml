@@ -579,3 +579,8 @@ function avg_temp(start_x,start_y) {
 	return(total/25)
 }
 
+
+
+
+
+

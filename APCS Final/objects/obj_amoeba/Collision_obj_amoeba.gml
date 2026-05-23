@@ -1,20 +1,21 @@
-if sex = 0 and other.sex = 1 and hungry>hungertime/4 and bred=0 {
+if sex = 0 and other.sex = 1 and hungry>hungertime/4 and bred=0 and age >= fertile_age{
 	show_debug_message("breed")
 	var kids = children_num+round(random_range(-1,1))
 	for (var i=kids;i>0;i=i-1) {
 		scr_gene_transfer(traits, other.traits)
 	}
 	hungry=hungertime/5
-	bred = nameof(other)
+	bred = other.name
 	breed_mate=1
-	alarm[0]=1//set alarm to make breed_mate go to 0 (change 1 value later, just added so it doesnt crash - L12)
+	alarm[0]=50/obj_time_controller.rate //set alarm to make breed_mate go to 0 (change 1 value later, just added so it doesnt crash - L12)
 }
-if sex = 0 and other.sex = 1 and hungry>hungertime/4 and bred=nameof(other) and breed_mate=0{
+if sex = 0 and other.sex = 1 and hungry>hungertime/4 and bred=other.name and breed_mate=0 and age >= fertile_age{
 	show_debug_message("breed with mate")
 	var kids = children_num+round(random_range(-1,1))
 	for (var i=kids;i>0;i=i-1) {
 		scr_gene_transfer(traits, other.traits)
 	}
 	hungry=hungertime/6
-	bred = nameof(other)
+	breed_mate=1
+	alarm[0]=75/obj_time_controller.rate
 }
