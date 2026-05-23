@@ -7,7 +7,7 @@ if sex = 0 and other.sex = 1 and hungry>hungertime/4 and bred=0 {
 	hungry=hungertime/5
 	bred = nameof(other)
 	breed_mate=1
-	alarm0//set alarm to make breed_mate go to 0
+	alarm[0]=1//set alarm to make breed_mate go to 0 (change 1 value later, just added so it doesnt crash - L12)
 }
 if sex = 0 and other.sex = 1 and hungry>hungertime/4 and bred=nameof(other) and breed_mate=0{
 	show_debug_message("breed with mate")
