@@ -1,8 +1,9 @@
 pathspeed = 1
 path = path_add()
-pathx = x
-pathy = y
+pathx = x+1
+pathy = y+1
 pot_target = 0
+bred = 0
 mp_potential_settings(45, 5, 5, 0)
 mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 moving = false
@@ -15,8 +16,9 @@ width = 10
 strength = 3
 agility = 1.5
 breath = 10
+children_num = 2
 intelligence = 100 //like iq
-intuition = 100 //used for finding stuff outside of sense range
+intuition = 20 //used for finding stuff outside of sense range
 accuracy = 1 //higer this # is, the more accurate organism's senses are (use fractions for less accuracy)
 curiosity = 100 //more wandering
 hungertime = 250 //aka max hunger
@@ -29,5 +31,5 @@ skin_extrusion = 0
 muscle_mass_limb = 10
 offspring = 1
 sex=irandom(1)
-traits=[Health,height,width,strength,agility,breath,intelligence,intuition,accuracy,curiosity,hungertime,hungerspeed,starvationtime,sight,smell,skin,skin_extrusion,muscle_mass_limb,offspring]
+traits=[Health,height,width,strength,agility,breath,children_num,intelligence,intuition,accuracy,curiosity,hungertime,hungerspeed,starvationtime,sight,smell,skin,skin_extrusion,muscle_mass_limb,offspring]
 hungry = hungertime

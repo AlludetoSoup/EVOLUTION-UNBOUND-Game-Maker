@@ -7,7 +7,9 @@ else{
 grow_timer = 0	
 }
 while grow_timer >= 744 and stage != 5{
+	if irandom(1) = 1 {
 	stage +=1
+	}
 	check_spr()
 	grow_timer-=744
 }

@@ -9,7 +9,7 @@ if Health <= 0 {
 }
 image_yscale = height/10
 if  path_position = 1 {
-	if hungry < hungertime { //change to hungertime/2 after testing
+	if hungry < hungertime/2 { //change to hungertime/2 after testing
 		pot_target = locate(obj_bush, "stage", 5, self, 1, "")
 		if pot_target.sprite_index = spr_bush_l5 or pot_target.sprite_index = spr_bush_l4 {
 			if point_in_circle(pot_target.x, pot_target.y, x, y, sight*100) {
@@ -26,7 +26,7 @@ if  path_position = 1 {
 					path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 				}
 				else {
-					if point_in_circle(pot_target.x, pot_target.y, x, y, intuition*50) {
+					if point_in_circle(pot_target.x, pot_target.y, x, y, intuition*100) {
 						pathx = pot_target.x+random_range(-15,15)*accuracy
 						pathy = pot_target.y+random_range(-15,15)*accuracy
 						mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
@@ -44,10 +44,24 @@ if  path_position = 1 {
 	
 	}
 	else {
-		pathx = x+random_range(-25, 25)*curiosity
-		pathy = y+random_range(-25, 25)*curiosity
-		mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-		path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
+		if hungry > hungertime/2 and sex = 1 {
+			pot_target = locate(obj_amoeba, "sex", 0, self, 1, "")
+			if pot_target != "" {
+				pathx = pot_target.x
+				pathy = pot_target.y
+				mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
+				path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
+			}
+		}
+		else {
+			pot_target = locate(obj_amoeba, "sex", 1, self, 1, "")
+			if pot_target != "" {
+				pathx = pot_target.x
+				pathy = pot_target.y
+				mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
+				path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
+			}
+		}	
 	}
 }
 
