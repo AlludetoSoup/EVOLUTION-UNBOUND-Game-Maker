@@ -10,7 +10,7 @@ if Health <= 0 {
 }
 image_yscale = height/10
 if  path_position = 1 {
-	if hungry < hungertime/2 { //change to hungertime/2 after testing
+	if hungry < hungertime/2 {
 		pot_target = locate(obj_bush, "stage", 5, self, 1, "")
 		if pot_target.sprite_index = spr_bush_l5 or pot_target.sprite_index = spr_bush_l4 {
 			if point_in_circle(pot_target.x, pot_target.y, x, y, sight*100) {
@@ -83,3 +83,4 @@ if  path_position = 1 {
 //clamp path destination
 if path_get_point_x(path,2)!=clamp(path_get_point_x(path,2),0,obj_worldgen.world_size) or path_get_point_y(path,2)!=clamp(path_get_point_y(path,2),0,obj_worldgen.world_size){
 path_change_point(path,2,clamp(path_get_point_x(path,2),0,obj_worldgen.world_size),clamp(path_get_point_y(path,2),0,obj_worldgen.world_size),pathspeed*obj_time_controller.rate)}
+show_debug_message(path_get_length(path))
