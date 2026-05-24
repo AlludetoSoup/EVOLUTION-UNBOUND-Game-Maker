@@ -1,20 +1,30 @@
-// 1. Setup your prompt text (No punctuation symbols)
-var animal_description = "amoeba";
-var base_prompt = animal_description + " 16-bit pixel art sprite 2d video game asset side profile view flat colors clean edges isolated on a solid transparent background";
+// 1. Setup your prompt text (Keep it clean, no punctuation symbols)
+var animal_description = "best lawn chair";
+var base_prompt = animal_description + " 32-bit pixel art full front profile view isolated on solid black background";
 var encoded_prompt = string_replace_all(base_prompt, " ", "%20");
 
-// REPLACE THIS WITH YOUR WORKING API KEY (The one with the 5 image budget)
+// 2. Generate a random seed to ensure live compute cycles
+var random_seed = string(irandom_range(1, 999999));
 var my_api_key = "sk_iUkFIUkdKGYEO8OFmYb9zfy6bcm9ryy6"; 
 
-// 2. THE VALIDATED OFFICIAL ENDPOINT STRUCTURE
-// Changed model parameter to "flux" to match their system registry
-var url = "https://gen.pollinations.ai/image/" + encoded_prompt + "?width=512&height=512&nologo=true&enhance=false&model=zimage&key=" + my_api_key;
+// 3. THE STRICT RESTORED ROUTE (The prompt MUST follow /image/)
+var url = "https://gen.pollinations.ai/image/" + encoded_prompt 
+          + "?width=256"
+          + "&height=256"
+          + "&seed=" + random_seed
+          + "&model=zimage"
+          + "&nologo=true"
+          + "&enhance=false"
+          + "&key=" + my_api_key;
 
-// 3. Force target file destination into GameMaker sandbox workspace
+// 4. Sandbox workspace path
 target_file_path = working_directory + "temp_sprite.png";
 
-// 4. Download natively using http_get_file
-request_id = http_get_file(url, target_file_path);
+if (file_exists(target_file_path)) { 
+    file_delete(target_file_path); 
+}
 
+// 5. Download the binary stream directly
+request_id = http_get_file(url, target_file_path);
 sprite_ready = false;
 new_creature_sprite = -1;
