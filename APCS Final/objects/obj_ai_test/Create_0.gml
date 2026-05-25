@@ -1,5 +1,5 @@
-description = "happy emoji" //prompt here
-prompt = description + " 32-bit pixel art full side profile view isolated on solid fushia background"
+description = "flamingo" //prompt here
+prompt = description + " 32-bit pixel art full side profile view clean lines exact black outline isolated on solid fushia background"
 encoded_prompt = string_replace_all(prompt, " ", "%20")
 
 seed = string(irandom_range(1, 999999))

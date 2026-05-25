@@ -1,49 +1,37 @@
-if (ds_map_find_value(async_load, "id") == request_id) { 
-    status = ds_map_find_value(async_load, "status") 
-    http_code = ds_map_find_value(async_load, "http_status") 
-    
-    if (status == 0 && http_code == 200) { 
-        if (file_exists(file_path)) { 
-
-            temp_large_sprite = sprite_add(file_path, 1, true, false, 0, 0) 
-            
-            if (sprite_exists(temp_large_sprite)) { 
-                img_w = sprite_get_width(temp_large_sprite)
-                img_h = sprite_get_height(temp_large_sprite)
-                
-
-                comp_surf = surface_create(100, 100) 
-                
-                if (surface_exists(comp_surf)) {
-                    surface_set_target(comp_surf) 
-                    draw_clear_alpha(c_black, 0) 
-                    
-                    gpu_set_texfilter(false)
-                    
-                    scale_x = 100/img_w
-                    scale_y = 100/img_h
-                    
-                    draw_sprite_ext(temp_large_sprite, 0, 0, 0, scale_x, scale_y, 0, c_white, 1) 
-                    surface_reset_target() 
-                    
-
-                    new_creature_sprite = sprite_create_from_surface(comp_surf, 0, 0, 100, 100, false, false, 50, 50) 
-                    
-                    surface_free(comp_surf) 
-                    sprite_ready = true
-                    show_debug_message("yippe")
-                } else {
-                    show_debug_message("memory error")
+if ds_map_find_value(async_load, "id") == request_id {
+    if ds_map_find_value(async_load, "status") == 0 {
+        temp_sprite = sprite_add(file_path, 1, false, false, 0, 0)
+        if sprite_exists(temp_sprite) {
+            sw = sprite_get_width(temp_sprite)
+            sh = sprite_get_height(temp_sprite)
+            surf = surface_create(sw, sh)
+            surface_set_target(surf)
+            draw_clear_alpha(c_black, 0)
+            draw_sprite(temp_sprite, 0, 0, 0)
+            surface_reset_target()
+            buff = buffer_create(sw * sh * 4, buffer_fixed, 1)
+            buffer_get_surface(buff, surf, 0)
+            buffer_seek(buff, buffer_seek_start, 0)
+            for (i = 0; i < (sw * sh); i++) {
+                r = buffer_read(buff, buffer_u8)
+                g = buffer_read(buff, buffer_u8)
+                b = buffer_read(buff, buffer_u8)
+                a = buffer_read(buff, buffer_u8)
+                dist = point_distance_3d(r, g, b, 232, 38, 99)
+                if dist < 70 {
+                    buffer_seek(buff, buffer_seek_relative, -4)
+                    buffer_write(buff, buffer_u8, 0)
+                    buffer_write(buff, buffer_u8, 0)
+                    buffer_write(buff, buffer_u8, 0)
+                    buffer_write(buff, buffer_u8, 0)
                 }
-                
-                sprite_delete(temp_large_sprite) 
-            } else { 
-                show_debug_message("failed to decode") 
-            } 
-            
-            file_delete(file_path) 
-        } 
-    } else if (status < 0) {
-        show_debug_message("network error " + string(http_code))
+            }
+            buffer_set_surface(buff, surf, 0)
+            new_creature_sprite = sprite_create_from_surface(surf, 0, 0, sw, sh, false, false, 0, 0)
+            sprite_ready = true
+            surface_free(surf)
+            buffer_delete(buff)
+            sprite_delete(temp_sprite)
+        }
     }
 }
