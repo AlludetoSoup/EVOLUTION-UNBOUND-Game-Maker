@@ -19,7 +19,7 @@
   },
   "name":"APCS Final",
   "resources":[
-    {"id":{"name":"obj_ai_test","path":"objects/obj_ai_test/obj_ai_test.yy",},},
+    {"id":{"name":"obj_ai_sprite","path":"objects/obj_ai_sprite/obj_ai_sprite.yy",},},
     {"id":{"name":"obj_amoeba","path":"objects/obj_amoeba/obj_amoeba.yy",},},
     {"id":{"name":"obj_bush","path":"objects/obj_bush/obj_bush.yy",},},
     {"id":{"name":"obj_button_save","path":"objects/obj_button_save/obj_button_save.yy",},},

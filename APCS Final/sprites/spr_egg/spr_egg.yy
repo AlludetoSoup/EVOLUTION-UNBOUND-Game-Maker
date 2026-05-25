@@ -74,7 +74,7 @@
     },
     "name":"spr_egg",
     "playback":1,
-    "playbackSpeed":10.0,
+    "playbackSpeed":1.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",

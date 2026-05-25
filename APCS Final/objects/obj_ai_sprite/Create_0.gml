@@ -1,5 +1,5 @@
-description = "flamingo" //prompt here
-prompt = description + " 32-bit pixel art full side profile view clean lines exact black outline isolated on solid fushia background"
+description = "" //prompt here
+prompt = "imagine a "+description +"with NO TEXT 32-bit pixel art full side profile view clean lines isolated on a solid pink background"
 encoded_prompt = string_replace_all(prompt, " ", "%20")
 
 seed = string(irandom_range(1, 999999))

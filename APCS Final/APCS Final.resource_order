@@ -1,7 +1,7 @@
 {
   "FolderOrderSettings":[],
   "ResourceOrderSettings":[
-    {"name":"obj_ai_test","order":14,"path":"objects/obj_ai_test/obj_ai_test.yy",},
+    {"name":"obj_ai_sprite","order":14,"path":"objects/obj_ai_sprite/obj_ai_sprite.yy",},
     {"name":"obj_bush","order":22,"path":"objects/obj_bush/obj_bush.yy",},
     {"name":"obj_button_save","order":38,"path":"objects/obj_button_save/obj_button_save.yy",},
     {"name":"obj_button_start","order":32,"path":"objects/obj_button_start/obj_button_start.yy",},

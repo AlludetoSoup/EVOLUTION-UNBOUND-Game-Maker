@@ -17,8 +17,8 @@ if ds_map_find_value(async_load, "id") == request_id {
                 g = buffer_read(buff, buffer_u8)
                 b = buffer_read(buff, buffer_u8)
                 a = buffer_read(buff, buffer_u8)
-                dist = point_distance_3d(r, g, b, 232, 38, 99)
-                if dist < 70 {
+                dist = point_distance_3d(r, g, b, 253, 181, 201)
+                if dist < 50 {
                     buffer_seek(buff, buffer_seek_relative, -4)
                     buffer_write(buff, buffer_u8, 0)
                     buffer_write(buff, buffer_u8, 0)
