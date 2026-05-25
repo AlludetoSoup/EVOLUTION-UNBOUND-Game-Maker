@@ -31,7 +31,7 @@
     {"name":"spr_button_start","order":34,"path":"sprites/spr_button_start/spr_button_start.yy",},
     {"name":"spr_cactus","order":26,"path":"sprites/spr_cactus/spr_cactus.yy",},
     {"name":"spr_dirt","order":3,"path":"sprites/spr_dirt/spr_dirt.yy",},
-    {"name":"spr_food","order":15,"path":"sprites/spr_food/spr_food.yy",},
+    {"name":"spr_egg","order":15,"path":"sprites/spr_egg/spr_egg.yy",},
     {"name":"spr_grass","order":2,"path":"sprites/spr_grass/spr_grass.yy",},
     {"name":"spr_snow","order":9,"path":"sprites/spr_snow/spr_snow.yy",},
     {"name":"spr_stone","order":8,"path":"sprites/spr_stone/spr_stone.yy",},
