@@ -1,18 +1,18 @@
 if (ds_map_find_value(async_load, "id") == request_id) { 
-    var status = ds_map_find_value(async_load, "status") 
-    var http_code = ds_map_find_value(async_load, "http_status") 
+    status = ds_map_find_value(async_load, "status") 
+    http_code = ds_map_find_value(async_load, "http_status") 
     
     if (status == 0 && http_code == 200) { 
-        if (file_exists(target_file_path)) { 
+        if (file_exists(file_path)) { 
 
-            var temp_large_sprite = sprite_add(target_file_path, 1, true, false, 0, 0) 
+            temp_large_sprite = sprite_add(file_path, 1, true, false, 0, 0) 
             
             if (sprite_exists(temp_large_sprite)) { 
-                var img_w = sprite_get_width(temp_large_sprite)
-                var img_h = sprite_get_height(temp_large_sprite)
+                img_w = sprite_get_width(temp_large_sprite)
+                img_h = sprite_get_height(temp_large_sprite)
                 
 
-                var comp_surf = surface_create(100, 100) 
+                comp_surf = surface_create(100, 100) 
                 
                 if (surface_exists(comp_surf)) {
                     surface_set_target(comp_surf) 
@@ -20,8 +20,8 @@ if (ds_map_find_value(async_load, "id") == request_id) {
                     
                     gpu_set_texfilter(false)
                     
-                    var scale_x = 100/img_w
-                    var scale_y = 100/img_h
+                    scale_x = 100/img_w
+                    scale_y = 100/img_h
                     
                     draw_sprite_ext(temp_large_sprite, 0, 0, 0, scale_x, scale_y, 0, c_white, 1) 
                     surface_reset_target() 
@@ -41,7 +41,7 @@ if (ds_map_find_value(async_load, "id") == request_id) {
                 show_debug_message("failed to decode") 
             } 
             
-            file_delete(target_file_path) 
+            file_delete(file_path) 
         } 
     } else if (status < 0) {
         show_debug_message("network error " + string(http_code))

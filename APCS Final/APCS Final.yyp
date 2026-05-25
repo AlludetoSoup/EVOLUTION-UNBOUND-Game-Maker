@@ -38,6 +38,7 @@
     {"id":{"name":"scr_gene_transfer","path":"scripts/scr_gene_transfer/scr_gene_transfer.yy",},},
     {"id":{"name":"scr_locate","path":"scripts/scr_locate/scr_locate.yy",},},
     {"id":{"name":"shdr_cloud","path":"shaders/shdr_cloud/shdr_cloud.yy",},},
+    {"id":{"name":"shdr_remove_bg","path":"shaders/shdr_remove_bg/shdr_remove_bg.yy",},},
     {"id":{"name":"spr_amoeba","path":"sprites/spr_amoeba/spr_amoeba.yy",},},
     {"id":{"name":"spr_bg_homescreen","path":"sprites/spr_bg_homescreen/spr_bg_homescreen.yy",},},
     {"id":{"name":"spr_bg","path":"sprites/spr_bg/spr_bg.yy",},},
