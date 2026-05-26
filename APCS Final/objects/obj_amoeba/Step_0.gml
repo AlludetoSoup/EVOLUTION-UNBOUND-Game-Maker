@@ -1,4 +1,10 @@
-if age
+age_days+=obj_time_controller.rate
+while age_days >=365 {
+	age_days -=365
+	age +=0.2*obj_time_controller.rate
+}
+
+
 if hungry > 0 {
 	hungry -= obj_time_controller.rate/hungerspeed*0.1
 }
@@ -84,3 +90,9 @@ if  path_position = 1 {
 if path_get_point_x(path,2)!=clamp(path_get_point_x(path,2),0,obj_worldgen.world_size) or path_get_point_y(path,2)!=clamp(path_get_point_y(path,2),0,obj_worldgen.world_size){
 path_change_point(path,2,clamp(path_get_point_x(path,2),0,obj_worldgen.world_size),clamp(path_get_point_y(path,2),0,obj_worldgen.world_size),pathspeed*obj_time_controller.rate)}
 show_debug_message(path_get_length(path))
+
+if last_age != age { 
+if irandom_range(1,round(lifespan*1.5)-age) =1 {Health=-0.1}
+}
+
+last_age = age

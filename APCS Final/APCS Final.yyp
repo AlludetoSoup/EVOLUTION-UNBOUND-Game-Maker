@@ -62,10 +62,10 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_spr_test","path":"rooms/rm_spr_test/rm_spr_test.yy",},},
     {"roomId":{"name":"Room_menu","path":"rooms/Room_menu/Room_menu.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Room_saves","path":"rooms/Room_saves/Room_saves.yy",},},
+    {"roomId":{"name":"rm_spr_test","path":"rooms/rm_spr_test/rm_spr_test.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

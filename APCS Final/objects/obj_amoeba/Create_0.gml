@@ -1,7 +1,6 @@
-alarm[1]=game_get_speed(gamespeed_fps)
 name = instance_number(obj_amoeba)
-pathspeed = 1
 path = path_add()
+pathspeed = 3
 pathx = x+1
 pathy = y+1
 pot_target = 0
@@ -27,6 +26,7 @@ curiosity = 100 //more wandering
 hungertime = 250 //aka max hunger
 hungerspeed = 5 //bigger # = slower hungering
 starvationtime = 20 //bigger # = slower starvation
+lifespan = 50
 sight = 5
 smell = 10
 skin = 10
@@ -35,5 +35,7 @@ skin_extrusion = 0
 muscle_mass_limb = 10
 offspring = 1
 sex=irandom(1)
-traits=[Health,height,width,strength,agility,breath,children_num,intelligence,intuition,accuracy,curiosity,hungertime,hungerspeed,starvationtime,sight,smell,skin,skin_extrusion,muscle_mass_limb,offspring]
+traits=[Health,height,width,strength,agility,breath,children_num,intelligence,intuition,accuracy,curiosity,hungertime,hungerspeed,starvationtime,lifespan,sight,smell,skin,skin_extrusion,muscle_mass_limb,offspring]
 hungry = hungertime
+age_days = 0
+last_age = 0
