@@ -81,7 +81,7 @@ if show_cloud {
 			draw_set_alpha(cloudGrid[# cellX, cellY])
 			draw_set_colour(c_white)
 
-	        draw_rectangle(drawX, drawY, drawX + tileSize*5, drawY + tileSize*5, false)
+	        //draw_rectangle(drawX, drawY, drawX + tileSize*5, drawY + tileSize*5, false)
 	    }
 	}
 }
@@ -94,12 +94,12 @@ for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
         var drawY = cellY * tileSize*5;
 		draw_set_colour(c_blue)
         if rainingGrid[# cellX, cellY] = 1 { 
-			draw_rectangle(drawX, drawY, drawX + tileSize*5, drawY + tileSize*5, false);
+			//draw_rectangle(drawX, drawY, drawX + tileSize*5, drawY + tileSize*5, false);
 			
 		}
 		else if rainingGrid[# cellX, cellY] = 2 { 
 			draw_set_colour(c_white)
-			draw_rectangle(drawX, drawY, drawX + tileSize*5, drawY + tileSize*5, false);
+			//draw_rectangle(drawX, drawY, drawX + tileSize*5, drawY + tileSize*5, false);
 		}
 		
     }

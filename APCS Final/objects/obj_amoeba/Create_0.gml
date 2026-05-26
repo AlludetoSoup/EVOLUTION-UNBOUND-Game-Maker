@@ -1,6 +1,6 @@
 name = instance_number(obj_amoeba)
 path = path_add()
-pathspeed = 2
+pathspeed = 1
 pathx = x+1
 pathy = y+1
 pot_target = 0
@@ -22,7 +22,7 @@ children_num = 2
 intelligence = 100 //like iq
 intuition = 20 //used for finding stuff outside of sense range
 accuracy = 1 //lower this # is, the more accurate organism's senses are (use fractions for more accuracy)
-curiosity = 100 //more wandering
+curiosity = 3 //more wandering
 hungertime = 250 //aka max hunger
 hungerspeed = 5 //bigger # = slower hungering
 starvationtime = 20 //bigger # = slower starvation
@@ -33,9 +33,9 @@ skin = 10
 fertile_age=10
 skin_extrusion = 0
 muscle_mass_limb = 10
-offspring = 1
 sex=irandom(1)
-traits={"health":Health,"height":Height,"width":Width,"strength":strength,"agility":agility,"breath":breath,children_num,intelligence,intuition,accuracy,curiosity,hungertime,hungerspeed,starvationtime,lifespan,sight,smell,skin,skin_extrusion,muscle_mass_limb,offspring}
 hungry = hungertime
 age_days = 0
 last_age = 0
+traits={"health":Health,"height":Height,"width":Width,"strength":strength,"agility":agility,"breath":breath,"children_num":children_num,"intellegence":intelligence,"intuition":intuition,"accuracy":accuracy,"curiosity":curiosity,"hungertime":hungertime,"hungerspeed":hungerspeed,"starvationtime":starvationtime,"lifespan":lifespan,"sight":sight,"smell":smell,"skin":skin,"skin_extrusion":skin_extrusion,"muscle_mass_limb":muscle_mass_limb}
+
