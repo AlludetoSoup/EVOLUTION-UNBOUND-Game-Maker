@@ -14,7 +14,8 @@ else {
 if Health <= 0 {
 	instance_destroy(self)
 }
-image_yscale = height/10
+image_yscale = Height/10
+image_xscale = Width/10
 if  path_position = 1 {
 	if hungry < hungertime/2 {
 		pot_target = locate(obj_bush, "stage", 5, self, 1, "")

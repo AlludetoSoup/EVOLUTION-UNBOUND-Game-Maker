@@ -1,6 +1,6 @@
 name = instance_number(obj_amoeba)
 path = path_add()
-pathspeed = 3
+pathspeed = 2
 pathx = x+1
 pathy = y+1
 pot_target = 0
@@ -13,8 +13,8 @@ path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 age=0
 //traits
 Health = 100
-height = 10
-width = 10
+Height = 10
+Width = 10
 strength = 3
 agility = 1.5
 breath = 10
@@ -35,7 +35,7 @@ skin_extrusion = 0
 muscle_mass_limb = 10
 offspring = 1
 sex=irandom(1)
-traits=[Health,height,width,strength,agility,breath,children_num,intelligence,intuition,accuracy,curiosity,hungertime,hungerspeed,starvationtime,lifespan,sight,smell,skin,skin_extrusion,muscle_mass_limb,offspring]
+traits={"health":Health,"height":Height,"width":Width,"strength":strength,"agility":agility,"breath":breath,children_num,intelligence,intuition,accuracy,curiosity,hungertime,hungerspeed,starvationtime,lifespan,sight,smell,skin,skin_extrusion,muscle_mass_limb,offspring}
 hungry = hungertime
 age_days = 0
 last_age = 0
