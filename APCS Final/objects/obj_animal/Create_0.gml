@@ -1,4 +1,4 @@
-name = instance_number(obj_amoeba)
+name = instance_number(obj_animal)
 path = path_add()
 pathspeed = 1
 pathx = x+1

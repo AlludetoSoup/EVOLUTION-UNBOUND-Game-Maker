@@ -53,7 +53,7 @@ if  path_position = 1 {
 	}
 	else {
 		if hungry > hungertime/2 and sex = 1 and age >= fertile_age{
-			pot_target = locate(obj_amoeba, "sex", 0, self, 1, "")
+			pot_target = locate(obj_animal, "sex", 0, self, 1, "")
 			if pot_target != "" and point_in_circle(pot_target.x, pot_target.y, x, y, smell*10){
 				pathx = clamp(pot_target.x,0,obj_worldgen.world_size)
 				pathy = clamp(pot_target.y,0,obj_worldgen.world_size)
@@ -70,7 +70,7 @@ if  path_position = 1 {
 		else {
 			if age >= fertile_age and breed_mate=0{
 			
-				pot_target = locate(obj_amoeba, "sex", 1, self, 1, "")
+				pot_target = locate(obj_animal, "sex", 1, self, 1, "")
 				if pot_target != "" and point_in_circle(pot_target.x, pot_target.y, x, y, smell*10){
 					pathx = clamp(pot_target.x,0,obj_worldgen.world_size)
 					pathy = clamp(pot_target.y,0,obj_worldgen.world_size)
@@ -85,7 +85,7 @@ if  path_position = 1 {
 				}
 			}else{
 				if age >= fertile_age {
-					pot_target = locate(obj_amoeba, "name", breed_mate, self, 1, "")
+					pot_target = locate(obj_animal, "name", breed_mate, self, 1, "")
 					if pot_target != "" and point_in_circle(pot_target.x, pot_target.y, x, y, smell*10){
 						pathx = clamp(x+random_range(-100,100)*curiosity,0,obj_worldgen.world_size)
 						pathy = clamp(y+random_range(-100,100)*curiosity,0,obj_worldgen.world_size)
@@ -111,7 +111,7 @@ if  path_position = 1 {
 //clamp path destination
 if path_get_point_x(path,2)!=clamp(path_get_point_x(path,2),0,obj_worldgen.world_size) or path_get_point_y(path,2)!=clamp(path_get_point_y(path,2),0,obj_worldgen.world_size){
 path_change_point(path,2,clamp(path_get_point_x(path,2),0,obj_worldgen.world_size),clamp(path_get_point_y(path,2),0,obj_worldgen.world_size),pathspeed*obj_time_controller.rate)}
-show_debug_message(path_get_length(path))
+//show_debug_message(path_get_length(path))
 
 if last_age != age {
 //if irandom_range(1,round(lifespan*1.5)-age) = 1 {Health-=20}

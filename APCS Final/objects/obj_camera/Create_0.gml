@@ -3,3 +3,5 @@
 size = 2000
 fullscreen = false
 scroll=0
+spect = false
+spect_inst = noone

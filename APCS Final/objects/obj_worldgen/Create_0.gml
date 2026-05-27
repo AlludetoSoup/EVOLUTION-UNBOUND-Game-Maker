@@ -7,6 +7,7 @@ randomise()
 frame = 0
 landGrid = mp_grid_create(0, 0, world_size/100, world_size/100, 100, 100)
 show_cloud = false
+show_weather = true
 //x=0
 //y=0
 //for (var i = 0; i < (world_size/100)*(world_size/100); i+=1) {
