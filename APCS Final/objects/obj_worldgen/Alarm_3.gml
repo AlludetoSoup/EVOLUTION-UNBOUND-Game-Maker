@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-number_spawn = irandom_range(10,100)
+number_spawn = irandom_range(2,2)
 for (var i=0; i<number_spawn;i+=1){
 	stop = false
 	while not stop{

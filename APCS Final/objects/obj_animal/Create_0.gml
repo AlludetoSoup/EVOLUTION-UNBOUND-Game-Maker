@@ -3,7 +3,7 @@ path = path_add()
 pathspeed = 1
 pathx = x+1
 pathy = y+1
-pot_target = 0
+pot_target = self
 bred = 0
 breed_mate = 0
 mp_potential_settings(45, 5, 5, 0)
@@ -20,9 +20,9 @@ agility = 1.5
 breath = 10
 children_num = 2
 intelligence = 100 //like iq
-intuition = 20 //used for finding stuff outside of sense range
-accuracy = 1 //lower this # is, the more accurate organism's senses are (use fractions for more accuracy)
-curiosity = 3 //more wandering
+intuition = 200000000 //used for finding stuff outside of sense range
+accuracy = 0 //lower this # is, the more accurate organism's senses are (use fractions for more accuracy)
+curiosity = 30 //more wandering
 hungertime = 250 //aka max hunger
 hungerspeed = 5 //bigger # = slower hungering
 starvationtime = 20 //bigger # = slower starvation
