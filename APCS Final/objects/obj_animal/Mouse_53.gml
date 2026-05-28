@@ -1,4 +1,4 @@
-if position_meeting(mouse_x,mouse_y,self) {
+if position_meeting(mouse_x,mouse_y,self) and not obj_camera.spect{
 	obj_camera.spect = true
 	obj_camera.spect_inst = self
 	obj_camera.size = 2000

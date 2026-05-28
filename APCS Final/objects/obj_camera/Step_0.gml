@@ -43,5 +43,5 @@ if obj_worldgen.world_size-obj_camera.size/2 < y {
 
 if spect {
 	x = spect_inst.x
-	y = spect_inst.y
+	y = spect_inst.y-50
 }
