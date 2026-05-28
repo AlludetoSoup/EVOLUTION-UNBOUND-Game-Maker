@@ -93,6 +93,7 @@ if  path_position = 1 {
 						pathy = clamp(y+random_range(-50,50)*curiosity,0,obj_worldgen.world_size)
 						mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 						path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
+						//scr_gene_transfer(traits, breed_mate.traits)
 					}
 					else {
 						if pot_target != "" {
@@ -112,6 +113,7 @@ if  path_position = 1 {
 	}
 }
 //clamp path destination
+
 if path_get_point_x(path,2)!=clamp(path_get_point_x(path,2),0,obj_worldgen.world_size) or path_get_point_y(path,2)!=clamp(path_get_point_y(path,2),0,obj_worldgen.world_size){
 path_change_point(path,2,clamp(path_get_point_x(path,2),0,obj_worldgen.world_size),clamp(path_get_point_y(path,2),0,obj_worldgen.world_size),pathspeed*obj_time_controller.rate)}
 //show_debug_message(path_get_length(path))

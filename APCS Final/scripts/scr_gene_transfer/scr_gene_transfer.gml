@@ -1,6 +1,6 @@
 function scr_gene_transfer(parent1_stats,parent2_stats){
 	if age >= fertile_age {
-		show_debug_message(parent2_stats)
+		show_debug_overlay(parent2_stats)
 		p1_traits_arr=variable_struct_get_names(parent1_stats)
 		p2_traits_arr=variable_struct_get_names(parent2_stats)
 		

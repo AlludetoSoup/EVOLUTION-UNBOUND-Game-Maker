@@ -11,3 +11,4 @@ draw_circle_colour(x, y, intuition*100, c_red, c_yellow, true)
 if pot_target != ""{
 draw_rectangle(pot_target.x-50, pot_target.y-50, pot_target.x+50, pot_target.y+50, true)}
 draw_self()
+ 
