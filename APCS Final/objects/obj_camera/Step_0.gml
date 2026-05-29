@@ -42,6 +42,6 @@ if obj_worldgen.world_size-obj_camera.size/2 < y {
 }
 
 if spect {
-	x = spect_inst.x
-	y = spect_inst.y-50
+	x = clamp(spect_inst.x,size/2,obj_worldgen.world_size-(size/2))
+	y = clamp(spect_inst.y-50,size/2,obj_worldgen.world_size-(size/2))
 }
