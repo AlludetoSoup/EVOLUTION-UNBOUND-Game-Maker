@@ -1,3 +1,7 @@
+if path_get_speed(path,2) != pathspeed*obj_time_controller.rate{
+path_speed = pathspeed*obj_time_controller.rate
+}
+
 age_days+=obj_time_controller.rate
 while age_days >=365 {
 	age_days -=365
@@ -52,8 +56,9 @@ if  path_position = 1 {
 	
 	}
 	else {
-		if hungry > hungertime/2 and sex = 1 and age >= fertile_age{
+		if sex = 1 and age >= fertile_age{
 			pot_target = locate(obj_animal, "sex", 0, self, 1, "")
+			if pot_target = "" {show_debug_message("blind")}
 			if pot_target != "" and point_in_circle(pot_target.x, pot_target.y, x, y, smell*10){
 				pathx = clamp(pot_target.x+random_range(-50, 50)*accuracy,0,obj_worldgen.world_size)
 				pathy = clamp(pot_target.y+random_range(-50, 50)*accuracy,0,obj_worldgen.world_size)
@@ -66,7 +71,14 @@ if  path_position = 1 {
 				pathy = pot_target.y+random_range(-1000,1000)*accuracy
 				mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 				path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)}
+				else {
+					pathx = x+random_range(-25,25)*curiosity
+					pathy = y+random_range(-25,25)*curiosity
+					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
+					path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
+					}
 			}
+			
 		}
 		else {
 			if age >= fertile_age and breed_mate=0{
@@ -101,7 +113,7 @@ if  path_position = 1 {
 						pathy = pot_target.y+random_range(-1000,1000)*accuracy
 						mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 						path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)}
-					}
+						}
 				}else{
 					pathx = x+random_range(-25,25)*curiosity
 					pathy = y+random_range(-25,25)*curiosity
@@ -123,3 +135,7 @@ if last_age != age {
 }
 //bertha(1) made it to age 2000?????????????????????????????????????
 last_age = age
+
+
+x = clamp(x, 0, obj_worldgen.world_size)
+y = clamp(y, 0, obj_worldgen.world_size)
