@@ -4,6 +4,9 @@ world_size = 10000
 room_set_width(Room1,world_size)
 room_set_height(Room1,world_size)
 randomise()
+if obj_game_controller.seed != "" {
+	random_set_seed(obj_game_controller.seed)
+}
 frame = 0
 landGrid = mp_grid_create(0, 0, world_size/100, world_size/100, 100, 100)
 show_cloud = false
