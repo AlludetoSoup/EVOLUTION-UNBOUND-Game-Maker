@@ -45,3 +45,7 @@ if spect {
 	x = clamp(spect_inst.x,size/2,obj_worldgen.world_size-(size/2))
 	y = clamp(spect_inst.y-50,size/2,obj_worldgen.world_size-(size/2))
 }
+else if instance_exists(obj_bottombar){
+obj_bottombar.x = x
+obj_bottombar.y = y+(size/2)	
+}

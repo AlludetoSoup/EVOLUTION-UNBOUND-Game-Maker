@@ -6,6 +6,7 @@ image_yscale = obj_camera.size/100
 
 
 if not obj_camera.spect {
+	instance_create_layer(x,y,"Instances_3",obj_bottombar)
 	instance_destroy()	
 }
 x = obj_camera.x+(obj_camera.size/2)

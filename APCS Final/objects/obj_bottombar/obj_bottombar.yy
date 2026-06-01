@@ -1,9 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_grass",
-  "eventList":[],
+  "%Name":"obj_bottombar",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_grass",
+  "name":"obj_bottombar",
   "overriddenProperties":[],
   "parent":{
     "name":"APCS Final",
@@ -27,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_bottombar",
+    "path":"sprites/spr_bottombar/spr_bottombar.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
