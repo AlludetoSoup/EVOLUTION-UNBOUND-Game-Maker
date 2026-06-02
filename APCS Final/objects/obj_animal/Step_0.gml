@@ -66,7 +66,7 @@ if  path_position = 1 {
 	}
 	else {
 		if sex = 1 and age >= fertile_age{
-			pot_target = locate(obj_animal, "sex", 0, )
+			pot_target = locate(obj_animal, "sex", 0, "bred", 0)
 			if pot_target = "" {show_debug_message("guy blind")}
 			if pot_target != "" and point_in_circle(pot_target.x, pot_target.y, x, y, smell*10){
 				pathx = clamp(pot_target.x+random_range(-50, 50)*accuracy,0,obj_worldgen.world_size)
