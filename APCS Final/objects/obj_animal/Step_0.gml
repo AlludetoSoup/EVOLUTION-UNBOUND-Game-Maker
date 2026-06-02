@@ -1,4 +1,4 @@
-//automatically change alarm times (this is for breeding cooldown so important)
+//automatically change running alarm times to match game speed (this is for breeding cooldown so important)
 if alarm0max != 10000/obj_time_controller.rate and alarm0max != -1 and alarm[0] != -1 {
 	previous = alarm[0]
 	alarm[0]=(10000/obj_time_controller.rate)*(alarm[0]/alarm0max)
