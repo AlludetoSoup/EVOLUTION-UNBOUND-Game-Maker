@@ -31,7 +31,7 @@ image_yscale = Height/10
 image_xscale = Width/10
 if  path_position = 1 {
 	if hungry < hungertime/2 {
-		pot_target = locate(obj_bush, "stage", 5, self, 1, "")
+		pot_target = locate(obj_bush, "stage", 5)
 		if pot_target.sprite_index = spr_bush_l5 or pot_target.sprite_index = spr_bush_l4 {
 			if point_in_circle(pot_target.x, pot_target.y, x, y, sight*10) {
 				pathx = clamp(pot_target.x+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
@@ -66,7 +66,7 @@ if  path_position = 1 {
 	}
 	else {
 		if sex = 1 and age >= fertile_age{
-			pot_target = locate(obj_animal, "sex", 0, self, 1, "")
+			pot_target = locate(obj_animal, "sex", 0, )
 			if pot_target = "" {show_debug_message("guy blind")}
 			if pot_target != "" and point_in_circle(pot_target.x, pot_target.y, x, y, smell*10){
 				pathx = clamp(pot_target.x+random_range(-50, 50)*accuracy,0,obj_worldgen.world_size)
@@ -92,8 +92,8 @@ if  path_position = 1 {
 		else {
 			if age >= fertile_age and breed_mate=0{
 			
-				pot_target = locate(obj_animal, "sex", 1, self, 1, "")
-				if pot_target = "" {show_debug_message("girl blind...huh")}
+				pot_target = locate(obj_animal, "sex", 1)
+				if pot_target = "" {show_debug_message("girl blind")}
 				if pot_target != "" and point_in_circle(pot_target.x, pot_target.y, x, y, smell*10){
 					pathx = clamp(pot_target.x+random_range(-50, 50)*accuracy,0,obj_worldgen.world_size)
 					pathy = clamp(pot_target.y+random_range(-50, 50)*accuracy,0,obj_worldgen.world_size)
@@ -109,7 +109,7 @@ if  path_position = 1 {
 				}
 			}else{
 				if age >= fertile_age {
-					pot_target = locate(obj_animal, "name", breed_mate, self, 1, "")
+					pot_target = locate(obj_animal, "name", breed_mate)
 					if pot_target != "" and point_in_circle(pot_target.x, pot_target.y, x, y, intuition*10){
 						pathx = clamp(x+random_range(-50,50)*curiosity,0,obj_worldgen.world_size)
 						pathy = clamp(y+random_range(-50,50)*curiosity,0,obj_worldgen.world_size)
