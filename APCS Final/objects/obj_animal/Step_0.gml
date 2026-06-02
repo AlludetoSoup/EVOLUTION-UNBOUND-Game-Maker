@@ -1,3 +1,12 @@
+//automatically change alarm times (this is for breeding cooldown so important)
+if alarm0max != 10000/obj_time_controller.rate and alarm0max != -1 and alarm[0] != -1 {
+	previous = alarm[0]
+	alarm[0]=(10000/obj_time_controller.rate)*(alarm[0]/alarm0max)
+	alarm0max=10000/obj_time_controller.rate
+	show_debug_message(string_concat("alarm0 changed from ",string(previous)," to ",string(alarm[0])))
+}
+
+
 if path_get_speed(path,2) != pathspeed*obj_time_controller.rate{
 path_speed = pathspeed*obj_time_controller.rate
 }
@@ -67,13 +76,13 @@ if  path_position = 1 {
 			}
 			else {
 				if pot_target != "" {
-				pathx = pot_target.x+random_range(-1000,1000)*accuracy
-				pathy = pot_target.y+random_range(-1000,1000)*accuracy
+				pathx = clamp(pot_target.x+random_range(-1000,1000)*accuracy,0,obj_worldgen.world_size)
+				pathy = clamp(pot_target.y+random_range(-1000,1000)*accuracy,0,obj_worldgen.world_size)
 				mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 				path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)}
 				else {
-					pathx = x+random_range(-25,25)*curiosity
-					pathy = y+random_range(-25,25)*curiosity
+					pathx = clamp(x+random_range(-25,25)*curiosity,0,obj_worldgen.world_size)
+					pathy = clamp(y+random_range(-25,25)*curiosity,0,obj_worldgen.world_size)
 					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 					path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 					}
@@ -93,8 +102,8 @@ if  path_position = 1 {
 				}
 				else {
 					if pot_target != "" {
-					pathx = pot_target.x+random_range(-1000,1000)*accuracy
-					pathy = pot_target.y+random_range(-1000,1000)*accuracy
+					pathx = clamp(pot_target.x+random_range(-1000,1000)*accuracy,0,obj_worldgen.world_size)
+					pathy = clamp(pot_target.y+random_range(-1000,1000)*accuracy,0,obj_worldgen.world_size)
 					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 					path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)}
 				}
@@ -106,18 +115,17 @@ if  path_position = 1 {
 						pathy = clamp(y+random_range(-50,50)*curiosity,0,obj_worldgen.world_size)
 						mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 						path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
-						//scr_gene_transfer(traits, breed_mate.traits)
 					}
 					else {
 						if pot_target != "" {
-						pathx = pot_target.x+random_range(-1000,1000)*accuracy
-						pathy = pot_target.y+random_range(-1000,1000)*accuracy
+						pathx = clamp(pot_target.x+random_range(-1000,1000)*accuracy,0,obj_worldgen.world_size)
+						pathy = clamp(pot_target.y+random_range(-1000,1000)*accuracy,0,obj_worldgen.world_size)
 						mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 						path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)}
 						}
 				}else{
-					pathx = x+random_range(-25,25)*curiosity
-					pathy = y+random_range(-25,25)*curiosity
+					pathx = clamp(x+random_range(-25,25)*curiosity,0,obj_worldgen.world_size)
+					pathy = clamp(y+random_range(-25,25)*curiosity,0,obj_worldgen.world_size)
 					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 					path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 				}			
@@ -127,18 +135,18 @@ if  path_position = 1 {
 }
 //clamp path destination
 
-if path_get_point_x(path,2)!=clamp(path_get_point_x(path,2),0,obj_worldgen.world_size) or path_get_point_y(path,2)!=clamp(path_get_point_y(path,2),0,obj_worldgen.world_size){
-path_change_point(path,2,clamp(path_get_point_x(path,2),0,obj_worldgen.world_size),clamp(path_get_point_y(path,2),0,obj_worldgen.world_size),pathspeed*obj_time_controller.rate)}
+//if path_get_point_x(path,2)!=clamp(path_get_point_x(path,2),0,obj_worldgen.world_size) or path_get_point_y(path,2)!=clamp(path_get_point_y(path,2),0,obj_worldgen.world_size){
+//path_change_point(path,2,clamp(path_get_point_x(path,2),0,obj_worldgen.world_size),clamp(path_get_point_y(path,2),0,obj_worldgen.world_size),pathspeed*obj_time_controller.rate)}
 //show_debug_message(path_get_length(path))
 
-if last_age != age {
+//if last_age != age {
 //if irandom_range(1,round(lifespan*1.5)-age) = 1 {Health-=20}
-}
+//}
 //bertha(1) made it to age 2000?????????????????????????????????????
-last_age = age
+//last_age = age
 
 
-x = clamp(x, 0, obj_worldgen.world_size)
-y = clamp(y, 0, obj_worldgen.world_size)
+x = clamp(x, 50, obj_worldgen.world_size-50)
+y = clamp(y, 50, obj_worldgen.world_size-50)
 
 

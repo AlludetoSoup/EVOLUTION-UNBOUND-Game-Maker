@@ -8,7 +8,8 @@ if sex = 0 and other.sex = 1 and hungry>hungertime/4 and bred=0 and age >= ferti
 	hungry=hungertime/5
 	bred = other.name
 	breed_mate=1
-	alarm[0]=50/obj_time_controller.rate //set alarm to make breed_mate go to 0 (change 1 value later, just added so it doesnt crash - L12)
+	alarm0max=10000/obj_time_controller.rate
+	alarm[0]=alarm0max
 }
 //if sex = 0 and other.sex = 1 and 
 if sex = 0 and other.sex = 1 and hungry>hungertime/4 and bred=other.name and breed_mate=0 and age >= fertile_age{
@@ -19,5 +20,6 @@ if sex = 0 and other.sex = 1 and hungry>hungertime/4 and bred=other.name and bre
 	}
 	hungry=hungertime/6
 	breed_mate=1
-	alarm[0]=75/obj_time_controller.rate
+	alarm0max=10000/obj_time_controller.rate
+	alarm[0]=alarm0max
 }

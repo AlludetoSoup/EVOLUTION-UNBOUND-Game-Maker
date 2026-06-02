@@ -13,7 +13,7 @@ draw_text_colour(x+650,y-725,string_concat("Age: ",string(obj_camera.spect_inst.
 draw_text_colour(x+650,y-650,string_concat("Hunger: ",string(obj_camera.spect_inst.hungry)),c_black,c_black,c_black,c_black,1)
 draw_text_colour(x+650,y-575,string_concat("IQ: ",string(obj_camera.spect_inst.intelligence)),c_black,c_black,c_black,c_black,1)
 draw_text_colour(x+650,y-500,string_concat("Sex: ",string(obj_camera.spect_inst.sex)),c_black,c_black,c_black,c_black,1)
-draw_text_colour(x+650,y-425,string_concat("Current Mate: ",string(obj_camera.spect_inst.breed_mate)),c_black,c_black,c_black,c_black,1)
+draw_text_colour(x+650,y-425,string_concat("Current Mate: ",string(obj_camera.spect_inst.bred),", Able to Breed: ",string(obj_camera.spect_inst.breed_mate)),c_black,c_black,c_black,c_black,1)
 draw_text_colour(x+650,y-350,string_concat("Curiosity: ",string(obj_camera.spect_inst.curiosity)),c_black,c_black,c_black,c_black,1)
 draw_text_colour(x+650,y-275,string_concat("Number of Children: ",string(obj_camera.spect_inst.children_num)),c_black,c_black,c_black,c_black,1)
 draw_text_colour(x+650,y-200,string_concat("Accuracy: ",string(obj_camera.spect_inst.accuracy)),c_black,c_black,c_black,c_black,1)
