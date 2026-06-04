@@ -9,7 +9,8 @@ function scr_gene_transfer(parent1_stats,parent2_stats){
 			p1_value=parent1_stats[$ p1_key]
 			p2_key= p2_traits_arr[i]
 			p2_value=parent2_stats[$ p2_key]
-			child_key = clamp(((p1_value+p2_value)/2)*random_range(-1.5,1.5),0,10000)
+			mutate_chance = irandom_range(0,1)
+			child_key = ((p1_value+p2_value)/2)*random_range(0.95,1.05)
 			variable_struct_set(child,p1_key,child_key)
 		}
 		
