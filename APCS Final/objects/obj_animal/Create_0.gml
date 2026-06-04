@@ -36,7 +36,7 @@ skin_extrusion = 0
 muscle_mass_limb = 10
 sex=irandom(1)
 hungry = hungertime
-age_days = 0
+age_hours = 0
 last_age = 0
 
 

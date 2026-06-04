@@ -7,5 +7,5 @@ if not obj_camera.delayed_spect {
 	image_yscale = obj_bottombar.image_yscale
 }
 if obj_camera.spect {
-instance_destroy()	
+	instance_destroy()	
 }

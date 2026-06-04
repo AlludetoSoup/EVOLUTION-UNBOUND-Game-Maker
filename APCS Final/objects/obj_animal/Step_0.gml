@@ -11,9 +11,8 @@ if path_get_speed(path,2) != pathspeed*obj_time_controller.rate{
 path_speed = pathspeed*obj_time_controller.rate
 }
 
-age_days+=obj_time_controller.rate
-while age_days >=365 {
-	age_days -=365
+while age_hours >=(365*24) {
+	age_hours -=(365*24)
 	age +=0.2*obj_time_controller.rate
 }
 
