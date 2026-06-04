@@ -8,6 +8,7 @@ size = 2000
 fullscreen = false
 scroll=0
 spect = false
+delayed_spect=false
 spect_inst = noone
 instance_create_layer(x,y,"Instances_3",obj_bottombar)
 placing = false
