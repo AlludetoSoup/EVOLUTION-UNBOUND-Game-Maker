@@ -21,15 +21,15 @@ agility = 1.5
 breath = 10
 children_num = 1
 intelligence = 100 //like iq
-intuition = 200000000 //used for finding stuff outside of sense range
-accuracy = 0 //lower this # is, the more accurate organism's senses are (use fractions for more accuracy)
+intuition = 100 //used for finding stuff outside of sense range
+accuracy = 1 //lower this # is, the more accurate organism's senses are (use fractions for more accuracy)
 curiosity = 30 //more wandering
 hungertime = 250 //aka max hunger
 hungerspeed = 5 //bigger # = slower hungering
 starvationtime = 20 //bigger # = slower starvation
 lifespan = 50
-sight = 5
-smell = 10
+sight = 30
+smell = 50
 skin = 10
 fertile_age=10
 skin_extrusion = 0

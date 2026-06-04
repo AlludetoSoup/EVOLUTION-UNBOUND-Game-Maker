@@ -13,7 +13,7 @@ path_speed = pathspeed*obj_time_controller.rate
 
 while age_hours >=(365*24) {
 	age_hours -=(365*24)
-	age +=0.2*obj_time_controller.rate
+	age +=1
 }
 
 
@@ -31,36 +31,70 @@ image_xscale = Width/10
 if  path_position = 1 {
 	if hungry < hungertime/2 {
 		pot_target = locate(obj_bush, "stage", 5)
-		if pot_target.sprite_index = spr_bush_l5 or pot_target.sprite_index = spr_bush_l4 {
+		//show_debug_message(pot_target+" "+pot_target.x+" "+pot_target.y)
 			if point_in_circle(pot_target.x, pot_target.y, x, y, sight*10) {
+				show_debug_message("found food with sight")
 				pathx = clamp(pot_target.x+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
 				pathy = clamp(pot_target.y+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
 				mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 				path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 			}
 			else {
-				if point_in_circle(pot_target.x, pot_target.y, x, y, smell*10) {	
-					pathx = clamp(pot_target.x+random_range(-50,50)*accuracy,0,obj_worldgen.world_size)
-					pathy = clamp(pot_target.y+random_range(-50,50)*accuracy,0,obj_worldgen.world_size)
+				if point_in_circle(pot_target.x, pot_target.y, x, y, smell*10) {
+					show_debug_message("found food with smell")
+					pathx = clamp(pot_target.x+random_range(-200,200)*accuracy,0,obj_worldgen.world_size)
+					pathy = clamp(pot_target.y+random_range(-200,200)*accuracy,0,obj_worldgen.world_size)
 					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 					path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 				}
 				else {
 					if point_in_circle(pot_target.x, pot_target.y, x, y, intuition*10) {
-						pathx = clamp(pot_target.x+random_range(-200,200)*accuracy,0,obj_worldgen.world_size)
-						pathy = clamp(pot_target.y+random_range(-200,200)*accuracy,0,obj_worldgen.world_size)
+						show_debug_message("found food with brain")
+						pathx = clamp(pot_target.x+random_range(-600,600)*accuracy,0,obj_worldgen.world_size)
+						pathy = clamp(pot_target.y+random_range(-600,600)*accuracy,0,obj_worldgen.world_size)
 						mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 						path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 					}
 					else {
-						pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
-						pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
-						mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-						path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
+						if hungry < hungertime/5 {
+							pot_target = instance_nearest(x, y, obj_animal)
+							if point_in_circle(pot_target.x, pot_target.y, x, y, sight*10) {
+								show_debug_message("found cann food with sight")
+								pathx = clamp(pot_target.x+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
+								pathy = clamp(pot_target.y+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
+								mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
+								path_start(path, 1.1*pathspeed*obj_time_controller.rate,path_action_stop, false)
+							}
+							else {
+								if point_in_circle(pot_target.x, pot_target.y, x, y, smell*10) {
+									show_debug_message("found cann food with smell")
+									pathx = clamp(pot_target.x+random_range(-200,200)*accuracy,0,obj_worldgen.world_size)
+									pathy = clamp(pot_target.y+random_range(-200,200)*accuracy,0,obj_worldgen.world_size)
+									mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
+									path_start(path, 1.1*pathspeed*obj_time_controller.rate,path_action_stop, false)
+								}
+								else {
+									if point_in_circle(pot_target.x, pot_target.y, x, y, intuition*10) {
+										show_debug_message("found cann food with brain")
+										pathx = clamp(pot_target.x+random_range(-600,600)*accuracy,0,obj_worldgen.world_size)
+										pathy = clamp(pot_target.y+random_range(-600,600)*accuracy,0,obj_worldgen.world_size)
+										mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
+										path_start(path, 1.1*pathspeed*obj_time_controller.rate,path_action_stop, false)
+									}
+								}
+							}
+						}
+						else {
+							show_debug_message("no food find")
+							pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+							pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+							mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
+							path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
+						}
 					}
 				}
 			}
-		}
+		
 	
 	}
 	else {
