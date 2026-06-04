@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+selecting = false
 start_pos = 0
 current_set = []
 array_copy(current_set,0,obj_camera.bar_tools,start_pos,6)
