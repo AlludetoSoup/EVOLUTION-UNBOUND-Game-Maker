@@ -1,9 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"obj_water",
-  "eventList":[],
+  "%Name":"obj_place_land",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_water",
+  "name":"obj_place_land",
   "overriddenProperties":[],
   "parent":{
     "name":"APCS Final",
@@ -27,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_egg",
+    "path":"sprites/spr_egg/spr_egg.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

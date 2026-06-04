@@ -540,10 +540,10 @@ for (var cellX = 0; cellX < gridWidth; cellX++) {
 
 		if biomeGrid[# cellX,cellY]= "tundra" or biomeGrid[# cellX,cellY] = "forest" or biomeGrid[# cellX,cellY] = "savanna" or biomeGrid[# cellX,cellY] = "desert"{
 			num = irandom(100)
-			if biomeGrid[# cellX,cellY]= "tundra" and num > 97 {
+			if biomeGrid[# cellX,cellY]= "tundra" and num > 98 {
 				instance_create_layer(cellX*100+50,cellY*100+50,"Instances_1", obj_bush)
 			}
-			else if biomeGrid[# cellX,cellY]= "forest" and num > 95 {
+			else if biomeGrid[# cellX,cellY]= "forest" and num > 97 {
 				instance_create_layer(cellX*100+50,cellY*100+50,"Instances_1", obj_bush)
 			}
 			else if biomeGrid[# cellX,cellY]= "tundra" and num < 5 {

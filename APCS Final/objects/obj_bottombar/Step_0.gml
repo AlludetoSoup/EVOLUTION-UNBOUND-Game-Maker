@@ -8,3 +8,5 @@ if obj_camera.spect {
 instance_destroy()	
 }
 
+array_copy(current_set,0,obj_camera.bar_tools,start_pos,6)
+
