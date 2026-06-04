@@ -2,7 +2,7 @@
 // You can write your code in this editor
 default_traits = {Health:100,Height:10,Width:10,strength : 3,agility : 1.5,breath : 10,children_num : 1,intelligence : 100 ,intuition : 200000000 ,accuracy : 0 ,curiosity : 30 ,hungertime : 250 ,hungerspeed : 5 ,starvationtime : 20 ,lifespan : 50,sight : 5,smell : 10,skin : 10,fertile_age:10,skin_extrusion : 0,muscle_mass_limb : 10}
 bar_tools = [[obj_place_land,0],[obj_place_land,1],[obj_place_land,2],[obj_place_land,3],[obj_place_land,4],[obj_place_land,5],[obj_place_land,6],[obj_place_land,7],[obj_place_land,8],[obj_place_animal,0]]
-lands = ["forest","tundra","savanna","mountain","snow","desert","beach","cold ocean", "warm ocean"]
+
 animals = [default_traits]
 size = 2000
 fullscreen = false

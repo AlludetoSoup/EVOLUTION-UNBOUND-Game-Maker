@@ -1,12 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
-var tileSize = 100;
-
-//custom colors
 var c_dark_green = $006611
 var c_puke_green = $447711
 var c_light_blue = $FFAA33
 var c_sand = $33AAFF
+var tileSize = 100;
+
+//custom colors
+
 draw_set_alpha(1)
 
 x_ = obj_camera.x
