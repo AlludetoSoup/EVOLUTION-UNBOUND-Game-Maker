@@ -27,3 +27,5 @@ check_spr()
 
 
 grow_timer = irandom(71)
+
+name="i am a bush"

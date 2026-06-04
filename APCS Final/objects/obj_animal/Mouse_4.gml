@@ -9,7 +9,6 @@ else if obj_camera.spect= true{
 	if obj_camera.spect_inst = self {
 		obj_camera.spect = false
 		obj_camera.alarm[0]=5
-		
 	}
 }
 

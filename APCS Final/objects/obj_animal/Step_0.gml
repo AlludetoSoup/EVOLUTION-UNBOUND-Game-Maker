@@ -31,7 +31,7 @@ image_xscale = Width/10
 if  path_position = 1 {
 	if hungry < hungertime/2 {
 		pot_target = locate(obj_bush, "stage", 5)
-		//show_debug_message(pot_target+" "+pot_target.x+" "+pot_target.y)
+		if pot_target != "" {
 			if point_in_circle(pot_target.x, pot_target.y, x, y, sight*10) {
 				show_debug_message("found food with sight")
 				pathx = clamp(pot_target.x+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
@@ -56,30 +56,30 @@ if  path_position = 1 {
 						path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 					}
 					else {
-						if hungry < hungertime/5 {
-							pot_target = instance_nearest(x, y, obj_animal)
+						if hungry < hungertime/4 {
+							pot_target = instance_nearest_notme(x, y, obj_animal)
 							if point_in_circle(pot_target.x, pot_target.y, x, y, sight*10) {
 								show_debug_message("found cann food with sight")
 								pathx = clamp(pot_target.x+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
 								pathy = clamp(pot_target.y+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
 								mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-								path_start(path, 1.1*pathspeed*obj_time_controller.rate,path_action_stop, false)
+								path_start(path, 1.3*pathspeed*obj_time_controller.rate,path_action_stop, false)
 							}
 							else {
 								if point_in_circle(pot_target.x, pot_target.y, x, y, smell*10) {
 									show_debug_message("found cann food with smell")
-									pathx = clamp(pot_target.x+random_range(-200,200)*accuracy,0,obj_worldgen.world_size)
-									pathy = clamp(pot_target.y+random_range(-200,200)*accuracy,0,obj_worldgen.world_size)
+									pathx = clamp(pot_target.x+random_range(-150,150)*accuracy,0,obj_worldgen.world_size)
+									pathy = clamp(pot_target.y+random_range(-150,150)*accuracy,0,obj_worldgen.world_size)
 									mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-									path_start(path, 1.1*pathspeed*obj_time_controller.rate,path_action_stop, false)
+									path_start(path, 1.2*pathspeed*obj_time_controller.rate,path_action_stop, false)
 								}
 								else {
 									if point_in_circle(pot_target.x, pot_target.y, x, y, intuition*10) {
 										show_debug_message("found cann food with brain")
-										pathx = clamp(pot_target.x+random_range(-600,600)*accuracy,0,obj_worldgen.world_size)
-										pathy = clamp(pot_target.y+random_range(-600,600)*accuracy,0,obj_worldgen.world_size)
+										pathx = clamp(pot_target.x+random_range(-400,400)*accuracy,0,obj_worldgen.world_size)
+										pathy = clamp(pot_target.y+random_range(-400,400)*accuracy,0,obj_worldgen.world_size)
 										mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-										path_start(path, 1.1*pathspeed*obj_time_controller.rate,path_action_stop, false)
+										path_start(path, 1.2*pathspeed*obj_time_controller.rate,path_action_stop, false)
 									}
 								}
 							}
@@ -94,7 +94,36 @@ if  path_position = 1 {
 					}
 				}
 			}
-		
+		} else{
+			if hungry < hungertime/4 {
+			pot_target = instance_nearest_notme(x, y, obj_animal)
+			if point_in_circle(pot_target.x, pot_target.y, x, y, sight*10) {
+				show_debug_message("found cann food with sight")
+				pathx = clamp(pot_target.x+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
+				pathy = clamp(pot_target.y+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
+				mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
+				path_start(path, 1.3*pathspeed*obj_time_controller.rate,path_action_stop, false)
+			}
+			else {
+				if point_in_circle(pot_target.x, pot_target.y, x, y, smell*10) {
+					show_debug_message("found cann food with smell")
+					pathx = clamp(pot_target.x+random_range(-150,150)*accuracy,0,obj_worldgen.world_size)
+					pathy = clamp(pot_target.y+random_range(-150,150)*accuracy,0,obj_worldgen.world_size)
+					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
+					path_start(path, 1.2*pathspeed*obj_time_controller.rate,path_action_stop, false)
+				}
+				else {
+					if point_in_circle(pot_target.x, pot_target.y, x, y, intuition*10) {
+						show_debug_message("found cann food with brain")
+						pathx = clamp(pot_target.x+random_range(-400,400)*accuracy,0,obj_worldgen.world_size)
+						pathy = clamp(pot_target.y+random_range(-400,400)*accuracy,0,obj_worldgen.world_size)
+						mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
+						path_start(path, 1.2*pathspeed*obj_time_controller.rate,path_action_stop, false)
+					}
+				}
+			}
+		}
+		}
 	
 	}
 	else {

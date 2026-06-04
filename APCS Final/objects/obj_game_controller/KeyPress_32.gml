@@ -1,0 +1,1 @@
+with obj_bush {if instance_number(obj_bush)!=1{instance_destroy()}}
