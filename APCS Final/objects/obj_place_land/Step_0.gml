@@ -6,3 +6,6 @@ if not obj_camera.delayed_spect {
 	image_xscale = obj_bottombar.image_xscale
 	image_yscale = obj_bottombar.image_yscale
 }
+if obj_camera.spect {
+instance_destroy()	
+}

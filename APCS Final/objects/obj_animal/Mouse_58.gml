@@ -1,1 +1,1 @@
-if distance_to_point(mouse_x,mouse_y) < 2500 {instance_destroy()}//boom=true
+if distance_to_point(mouse_x,mouse_y) < 2500 {instance_destroy()}
