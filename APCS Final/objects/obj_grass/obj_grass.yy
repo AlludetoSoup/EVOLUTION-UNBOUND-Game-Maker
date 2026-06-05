@@ -6,8 +6,8 @@
   "name":"obj_grass",
   "overriddenProperties":[],
   "parent":{
-    "name":"APCS Final",
-    "path":"APCS Final.yyp",
+    "name":"generic obj",
+    "path":"folders/generic obj.yy",
   },
   "parentObjectId":null,
   "persistent":false,

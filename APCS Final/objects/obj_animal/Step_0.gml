@@ -16,7 +16,6 @@ while age_hours >=(365*24) {
 	age +=1
 }
 
-
 if hungry > 0 {
 	hungry -= obj_time_controller.rate/hungerspeed*0.1
 }
@@ -28,64 +27,28 @@ if Health <= 0 {
 }
 image_yscale = Height/10
 image_xscale = Width/10
-if  path_position = 1 {
-	if hungry < hungertime/2 {
-		pot_target = locate(obj_bush, "stage", 5)
-		if pot_target != "" {
-			if point_in_circle(pot_target.x, pot_target.y, x, y, sight*10) {
-				show_debug_message("found food with sight")
-				pathx = clamp(pot_target.x+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
-				pathy = clamp(pot_target.y+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
-				mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-				path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
-			}
-			else {
-				if point_in_circle(pot_target.x, pot_target.y, x, y, smell*10) {
-					show_debug_message("found food with smell")
-					pathx = clamp(pot_target.x+random_range(-200,200)*accuracy,0,obj_worldgen.world_size)
-					pathy = clamp(pot_target.y+random_range(-200,200)*accuracy,0,obj_worldgen.world_size)
-					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-					path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
-				}
-				else {
-					if point_in_circle(pot_target.x, pot_target.y, x, y, intuition*10) {
-						show_debug_message("found food with brain")
-						pathx = clamp(pot_target.x+random_range(-600,600)*accuracy,0,obj_worldgen.world_size)
-						pathy = clamp(pot_target.y+random_range(-600,600)*accuracy,0,obj_worldgen.world_size)
-						mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-						path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
-					}
-					else {
-						if hungry < hungertime/4 {
-							pot_target = instance_nearest_notme(x, y, obj_animal)
-							if point_in_circle(pot_target.x, pot_target.y, x, y, sight*10) {
-								show_debug_message("found cann food with sight")
-								pathx = clamp(pot_target.x+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
-								pathy = clamp(pot_target.y+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
-								mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-								path_start(path, 1.3*pathspeed*obj_time_controller.rate,path_action_stop, false)
-							}
-							else {
-								if point_in_circle(pot_target.x, pot_target.y, x, y, smell*10) {
-									show_debug_message("found cann food with smell")
-									pathx = clamp(pot_target.x+random_range(-150,150)*accuracy,0,obj_worldgen.world_size)
-									pathy = clamp(pot_target.y+random_range(-150,150)*accuracy,0,obj_worldgen.world_size)
-									mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-									path_start(path, 1.2*pathspeed*obj_time_controller.rate,path_action_stop, false)
-								}
-								else {
-									if point_in_circle(pot_target.x, pot_target.y, x, y, intuition*10) {
-										show_debug_message("found cann food with brain")
-										pathx = clamp(pot_target.x+random_range(-400,400)*accuracy,0,obj_worldgen.world_size)
-										pathy = clamp(pot_target.y+random_range(-400,400)*accuracy,0,obj_worldgen.world_size)
-										mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-										path_start(path, 1.2*pathspeed*obj_time_controller.rate,path_action_stop, false)
-									}
+if  path_position = 1 { // if done with a path
+	if hungry < hungertime/2 { //if hungry
+		pot_target = locate(obj_bush, "stage", 5) //find closest full-grown bush (any range)
+		if pot_target != "" { //if bush was found
+			if move(sight,5) {} //go there if in sight range
+			else {//if not in sight
+				if move(smell,200) {}//go there if in smell range
+				else {//if not in smell
+					if move(intuition,600) {}//go there if in brain range
+					else {//if not in brain
+						if hungry < hungertime/4 {//if really hungry
+							pot_target = instance_nearest_notme(x, y, obj_animal) //find closest prey (any range)
+							if move(sight,5) {} //go there if in sight range
+							else {//if not in sight
+								if move(smell,200) {}//go there if in smell range
+								else {//if not in smell
+									if move(intuition,600) {}//go there if in brain range
 								}
 							}
 						}
-						else {
-							show_debug_message("no food find")
+						else {//if not really hungery
+							show_debug_message("no food find") //random wander --v
 							pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 							pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 							mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
@@ -94,98 +57,53 @@ if  path_position = 1 {
 					}
 				}
 			}
-		} else{
-			if hungry < hungertime/4 {
-			pot_target = instance_nearest_notme(x, y, obj_animal)
-			if point_in_circle(pot_target.x, pot_target.y, x, y, sight*10) {
-				show_debug_message("found cann food with sight")
-				pathx = clamp(pot_target.x+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
-				pathy = clamp(pot_target.y+random_range(-5,5)*accuracy,0,obj_worldgen.world_size)
-				mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-				path_start(path, 1.3*pathspeed*obj_time_controller.rate,path_action_stop, false)
-			}
-			else {
-				if point_in_circle(pot_target.x, pot_target.y, x, y, smell*10) {
-					show_debug_message("found cann food with smell")
-					pathx = clamp(pot_target.x+random_range(-150,150)*accuracy,0,obj_worldgen.world_size)
-					pathy = clamp(pot_target.y+random_range(-150,150)*accuracy,0,obj_worldgen.world_size)
-					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-					path_start(path, 1.2*pathspeed*obj_time_controller.rate,path_action_stop, false)
-				}
-				else {
-					if point_in_circle(pot_target.x, pot_target.y, x, y, intuition*10) {
-						show_debug_message("found cann food with brain")
-						pathx = clamp(pot_target.x+random_range(-400,400)*accuracy,0,obj_worldgen.world_size)
-						pathy = clamp(pot_target.y+random_range(-400,400)*accuracy,0,obj_worldgen.world_size)
-						mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-						path_start(path, 1.2*pathspeed*obj_time_controller.rate,path_action_stop, false)
+		} else{ //if no grown bush on map
+			if hungry < hungertime/4 {//if really hungry
+				pot_target = instance_nearest_notme(x, y, obj_animal) //find closest prey (any range)
+				if move(sight,5) {} //go there if in sight range
+				else {//if not in sight
+					if move(smell,200) {}//go there if in smell range
+					else {//if not in smell
+						if move(intuition,600) {}//go there if in brain range
 					}
 				}
 			}
-		}
-		}
+		}	
 	
 	}
-	else {
-		if sex = 1 and age >= fertile_age{
-			pot_target = locate(obj_animal, "sex", 0, "bred", 0)
+	else {//not hungry
+		if sex = 1 and age >= fertile_age{//if fertile male
+			pot_target = locate(obj_animal, "sex", 0, "bred", 0) //find mate (unbred female)
 			if pot_target = "" {show_debug_message("guy blind")}
-			if pot_target != "" and point_in_circle(pot_target.x, pot_target.y, x, y, smell*10){
-				pathx = clamp(pot_target.x+random_range(-50, 50)*accuracy,0,obj_worldgen.world_size)
-				pathy = clamp(pot_target.y+random_range(-50, 50)*accuracy,0,obj_worldgen.world_size)
-				mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-				path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
-			}
-			else {
-				if pot_target != "" {
-				pathx = clamp(pot_target.x+random_range(-1000,1000)*accuracy,0,obj_worldgen.world_size)
-				pathy = clamp(pot_target.y+random_range(-1000,1000)*accuracy,0,obj_worldgen.world_size)
-				mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-				path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)}
-				else {
+				if move(smell, 50) {}//go to mate if can smell
+			else {//if can't smell mate
+				if move(infinity, 2000) {}//wander to mate
+				else {//if no mate found, random wander
 					pathx = clamp(x+random_range(-25,25)*curiosity,0,obj_worldgen.world_size)
 					pathy = clamp(y+random_range(-25,25)*curiosity,0,obj_worldgen.world_size)
 					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 					path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
-					}
+				}
 			}
 			
 		}
-		else {
-			if age >= fertile_age and breed_mate=0{
+		else {//if female
+			if age >= fertile_age and breed_mate=0{ //if fertile and unmated
 			
-				pot_target = locate(obj_animal, "sex", 1)
+				pot_target = locate(obj_animal, "sex", 1) //find mate (male)
 				if pot_target = "" {show_debug_message("girl blind")}
-				if pot_target != "" and point_in_circle(pot_target.x, pot_target.y, x, y, smell*10){
-					pathx = clamp(pot_target.x+random_range(-50, 50)*accuracy,0,obj_worldgen.world_size)
-					pathy = clamp(pot_target.y+random_range(-50, 50)*accuracy,0,obj_worldgen.world_size)
-					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-					path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
+				if move(smell, 50) {}//go to mate if can smell
+				else {//if can't smell mate
+					if move(infinity, 2000) {}//wander to mate
 				}
-				else {
-					if pot_target != "" {
-					pathx = clamp(pot_target.x+random_range(-1000,1000)*accuracy,0,obj_worldgen.world_size)
-					pathy = clamp(pot_target.y+random_range(-1000,1000)*accuracy,0,obj_worldgen.world_size)
-					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-					path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)}
-				}
-			}else{
-				if age >= fertile_age {
-					pot_target = locate(obj_animal, "name", breed_mate)
-					if pot_target != "" and point_in_circle(pot_target.x, pot_target.y, x, y, intuition*10){
-						pathx = clamp(x+random_range(-50,50)*curiosity,0,obj_worldgen.world_size)
-						pathy = clamp(y+random_range(-50,50)*curiosity,0,obj_worldgen.world_size)
-						mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-						path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
+			}else{//if mated
+				if age >= fertile_age { //if fertile
+					pot_target = locate(obj_animal, "name", breed_mate) //find mate (specific male)
+					if move(smell, 50) {}//go to mate if can smell
+					else {//if can't smell mate
+						if move(infinity, 2000) {}//wander to mate
 					}
-					else {
-						if pot_target != "" {
-						pathx = clamp(pot_target.x+random_range(-1000,1000)*accuracy,0,obj_worldgen.world_size)
-						pathy = clamp(pot_target.y+random_range(-1000,1000)*accuracy,0,obj_worldgen.world_size)
-						mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-						path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)}
-						}
-				}else{
+				}else{ //if young and not hungry, random wander
 					pathx = clamp(x+random_range(-25,25)*curiosity,0,obj_worldgen.world_size)
 					pathy = clamp(y+random_range(-25,25)*curiosity,0,obj_worldgen.world_size)
 					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)

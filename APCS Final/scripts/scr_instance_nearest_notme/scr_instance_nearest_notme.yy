@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_instance_nearest_notme",
   "parent":{
-    "name":"APCS Final",
-    "path":"APCS Final.yyp",
+    "name":"scripts",
+    "path":"folders/scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

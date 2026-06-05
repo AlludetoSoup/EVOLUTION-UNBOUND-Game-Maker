@@ -19,8 +19,8 @@
   ],
   "name":"Room_menu",
   "parent":{
-    "name":"APCS Final",
-    "path":"APCS Final.yyp",
+    "name":"rooms",
+    "path":"folders/rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

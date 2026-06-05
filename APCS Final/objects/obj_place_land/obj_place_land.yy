@@ -11,8 +11,8 @@
   "name":"obj_place_land",
   "overriddenProperties":[],
   "parent":{
-    "name":"APCS Final",
-    "path":"APCS Final.yyp",
+    "name":"generic obj",
+    "path":"folders/generic obj.yy",
   },
   "parentObjectId":null,
   "persistent":false,
