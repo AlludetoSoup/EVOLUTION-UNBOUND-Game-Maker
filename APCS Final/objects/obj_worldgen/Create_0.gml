@@ -10,11 +10,10 @@ if obj_game_controller.seed != "" {
 	random_set_seed(obj_game_controller.seed)
 }
 frame = 0
-landGrid = mp_grid_create(0, 0, (world_size+100)/100, (world_size+100)/100, 100, 100)
+grid_width = (world_size + 100)/100
+grid_height = (world_size + 100)/100
+landGrid = mp_grid_create(0, 0, grid_width, grid_height, 100, 100);
 
-for (var cellX = 1; cellX < (world_size+100)/100; cellX++) {
-mp_grid_add_cell(landGrid, cellX, 1)
-show_debug_message(mp_grid_get_cell(landGrid, cellX,1))}
 
 
 show_cloud = false
@@ -153,6 +152,7 @@ for (var cellX = 0; cellX < gridWidth; cellX++) {
 
         if (value < 0.4) {
             terrainGrid[# cellX, cellY] = "water"
+			mp_grid_add_cell(landGrid,cellX,cellY)
         }
         else if (value < 0.43) {
             terrainGrid[# cellX, cellY] = "sand"
@@ -162,6 +162,7 @@ for (var cellX = 0; cellX < gridWidth; cellX++) {
         }
         else if (value < 0.75){
             terrainGrid[# cellX, cellY] = "mountain"
+			mp_grid_add_cell(landGrid,cellX,cellY)
         }
 		else {
             terrainGrid[# cellX, cellY] = "snow"

@@ -132,10 +132,14 @@ if  path_position = 1 { // if done with a path
 //bertha(1) made it to age 2000?????????????????????????????????????
 //last_age = age
 
-
-x = clamp(x, 50, obj_worldgen.world_size-50)
-y = clamp(y, 50, obj_worldgen.world_size-50)
-
+show_debug_message("old "+string(x)+" "+string(y))
+if x != clamp(x, 1000, obj_worldgen.world_size-1000) or y != clamp(y, 1000, obj_worldgen.world_size-1000) {
+	path_end()
+	x = clamp(x, 1000, obj_worldgen.world_size-1000)
+	y = clamp(y, 1000, obj_worldgen.world_size-1000)
+	show_debug_message("bro")
+}
+show_debug_message("new "+string(x)+" "+string(y))
 
 traits={"health":Health,"height":Height,"width":Width,"strength":strength,"agility":agility,"breath":breath,"children_num":children_num,"intellegence":intelligence,"intuition":intuition,"accuracy":accuracy,"curiosity":curiosity,"hungertime":hungertime,"hungerspeed":hungerspeed,"starvationtime":starvationtime,"lifespan":lifespan,"sight":sight,"smell":smell,"skin":skin,"skin_extrusion":skin_extrusion,"muscle_mass_limb":muscle_mass_limb}
 

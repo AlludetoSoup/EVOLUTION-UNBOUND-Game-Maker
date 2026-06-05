@@ -13,7 +13,7 @@ moving = false
 path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 age=0
 //traits
-Health = 100
+Health = 100//100
 Height = 10
 Width = 10
 strength = 3
@@ -25,7 +25,7 @@ intuition = 100 //used for finding stuff outside of sense range
 accuracy = 1 //lower this # is, the more accurate organism's senses are (use fractions for more accuracy)
 curiosity = 30 //more wandering
 hungertime = 250 //aka max hunger
-hungerspeed = 5 //bigger # = slower hungering
+hungerspeed = 5000 //bigger # = slower hungering
 starvationtime = 20 //bigger # = slower starvation
 lifespan = 50
 sight = 30
