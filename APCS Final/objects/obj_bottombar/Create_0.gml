@@ -3,8 +3,11 @@
 selecting = false
 start_pos = 0
 current_set = []
+changed = false
 array_copy(current_set,0,obj_camera.bar_tools,start_pos,6)
-
+instance_create_layer(x-375-62.5,y-50,"Instances_4",obj_arrow)
+inst_ = instance_create_layer(x+375+62.5,y-50,"Instances_4",obj_arrow)
+inst_.dir = 1
 i= 0
 x__ = -250-62.5
 while i < 6 {

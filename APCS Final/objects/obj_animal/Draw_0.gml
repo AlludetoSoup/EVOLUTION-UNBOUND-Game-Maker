@@ -9,5 +9,7 @@ draw_circle(x, y, sight*10,true)
 draw_circle_colour(x, y, smell*10, c_red, c_orange, true)
 draw_circle_colour(x, y, intuition*10, c_red, c_yellow, true)
 if pot_target != ""{
-draw_rectangle(pot_target.x-50, pot_target.y-50, pot_target.x+50, pot_target.y+50, true)}
+	if instance_exists(pot_target) {
+		draw_rectangle(pot_target.x-50, pot_target.y-50, pot_target.x+50, pot_target.y+50, true)}
+}
 draw_self()

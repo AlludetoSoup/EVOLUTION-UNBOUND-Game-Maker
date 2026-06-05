@@ -27,6 +27,7 @@
   "resources":[
     {"id":{"name":"obj_ai_sprite","path":"objects/obj_ai_sprite/obj_ai_sprite.yy",},},
     {"id":{"name":"obj_animal","path":"objects/obj_animal/obj_animal.yy",},},
+    {"id":{"name":"obj_arrow","path":"objects/obj_arrow/obj_arrow.yy",},},
     {"id":{"name":"obj_bottombar","path":"objects/obj_bottombar/obj_bottombar.yy",},},
     {"id":{"name":"obj_bush","path":"objects/obj_bush/obj_bush.yy",},},
     {"id":{"name":"obj_button_create","path":"objects/obj_button_create/obj_button_create.yy",},},
@@ -55,6 +56,7 @@
     {"id":{"name":"scr_move_on_path","path":"scripts/scr_move_on_path/scr_move_on_path.yy",},},
     {"id":{"name":"shdr_cloud","path":"shaders/shdr_cloud/shdr_cloud.yy",},},
     {"id":{"name":"spr_amoeba","path":"sprites/spr_amoeba/spr_amoeba.yy",},},
+    {"id":{"name":"spr_arrow","path":"sprites/spr_arrow/spr_arrow.yy",},},
     {"id":{"name":"spr_bg_homescreen","path":"sprites/spr_bg_homescreen/spr_bg_homescreen.yy",},},
     {"id":{"name":"spr_bg","path":"sprites/spr_bg/spr_bg.yy",},},
     {"id":{"name":"spr_bottombar","path":"sprites/spr_bottombar/spr_bottombar.yy",},},

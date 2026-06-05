@@ -1,4 +1,4 @@
-if pot_target != "" {
+if pot_target != "" and instance_exists(pot_target){
 	if other.name = pot_target.name {
 		if hungry>hungertime/4 and age >= fertile_age {
 			if sex = 0 and other.sex = 1 and hungry>hungertime/4 and bred=0 and age >= fertile_age{

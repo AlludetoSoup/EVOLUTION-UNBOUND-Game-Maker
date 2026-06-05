@@ -21,3 +21,6 @@ last_year = year
 total_hours -= day*(24)
 
 rate = rates[rate_pos]
+
+
+
