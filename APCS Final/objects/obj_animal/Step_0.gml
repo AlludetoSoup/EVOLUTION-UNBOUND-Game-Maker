@@ -120,26 +120,21 @@ if  path_position = 1 { // if done with a path
 		}	
 	}
 }
-//clamp path destination
 
-//if path_get_point_x(path,2)!=clamp(path_get_point_x(path,2),0,obj_worldgen.world_size) or path_get_point_y(path,2)!=clamp(path_get_point_y(path,2),0,obj_worldgen.world_size){
-//path_change_point(path,2,clamp(path_get_point_x(path,2),0,obj_worldgen.world_size),clamp(path_get_point_y(path,2),0,obj_worldgen.world_size),pathspeed*obj_time_controller.rate)}
-//show_debug_message(path_get_length(path))
-
-//if last_age != age {
-//if irandom_range(1,round(lifespan*1.5)-age) = 1 {Health-=20}
-//}
-//bertha(1) made it to age 2000?????????????????????????????????????
-//last_age = age
-
-show_debug_message("old "+string(x)+" "+string(y))
-if x != clamp(x, 1000, obj_worldgen.world_size-1000) or y != clamp(y, 1000, obj_worldgen.world_size-1000) {
-	path_end()
-	x = clamp(x, 1000, obj_worldgen.world_size-1000)
-	y = clamp(y, 1000, obj_worldgen.world_size-1000)
-	show_debug_message("bro")
+if x != clamp(x, 100, obj_worldgen.world_size-100) or y != clamp(y, 1000, obj_worldgen.world_size-1000) {
+    path_end()
+    x = clamp(x, 100, obj_worldgen.world_size-100)
+    y = clamp(y, 100, obj_worldgen.world_size-100)
+    
+    center_x = obj_worldgen.world_size / 2
+    center_y = obj_worldgen.world_size / 2
+    
+    pathx = clamp(x + (center_x - x) * 0.15 + random_range(-25, 25) * curiosity, 100, obj_worldgen.world_size - 100)
+    pathy = clamp(y + (center_y - y) * 0.15 + random_range(-25, 25) * curiosity, 100, obj_worldgen.world_size - 100)
+    
+    mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
+    path_start(path, pathspeed * obj_time_controller.rate, path_action_stop, false)
 }
-show_debug_message("new "+string(x)+" "+string(y))
 
 traits={"health":Health,"height":Height,"width":Width,"strength":strength,"agility":agility,"breath":breath,"children_num":children_num,"intellegence":intelligence,"intuition":intuition,"accuracy":accuracy,"curiosity":curiosity,"hungertime":hungertime,"hungerspeed":hungerspeed,"starvationtime":starvationtime,"lifespan":lifespan,"sight":sight,"smell":smell,"skin":skin,"skin_extrusion":skin_extrusion,"muscle_mass_limb":muscle_mass_limb}
 
