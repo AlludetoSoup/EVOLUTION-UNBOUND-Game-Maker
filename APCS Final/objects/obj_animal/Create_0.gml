@@ -13,10 +13,14 @@ moving = false
 path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 age=0
 //traits
+<<<<<<< HEAD
 Health = 100//100
+=======
+Health = choose(100,150)
+>>>>>>> a9e4d75b1a65f9c6c1c9449943b680180cb110a2
 Height = 10
 Width = 10
-strength = 3
+strength = choose(3,5)
 agility = 1.5
 breath = 10
 children_num = 1
@@ -24,10 +28,15 @@ intelligence = 100 //like iq
 intuition = 100 //used for finding stuff outside of sense range
 accuracy = 1 //lower this # is, the more accurate organism's senses are (use fractions for more accuracy)
 curiosity = 30 //more wandering
+<<<<<<< HEAD
 hungertime = 250 //aka max hunger
 hungerspeed = 5000 //bigger # = slower hungering
+=======
+hungertime = choose(250,300) //aka max hunger
+hungerspeed = 5 //bigger # = slower hungering
+>>>>>>> a9e4d75b1a65f9c6c1c9449943b680180cb110a2
 starvationtime = 20 //bigger # = slower starvation
-lifespan = 50
+lifespan = choose(50,75)
 sight = 30
 smell = 50
 skin = 10
