@@ -24,7 +24,7 @@ children_num = 1
 intelligence = 100 //like iq
 intuition = 100 //used for finding stuff outside of sense range
 accuracy = 1 //lower this # is, the more accurate organism's senses are (use fractions for more accuracy)
-curiosity = 30 //more wandering
+curiosity = 10 //more wandering
 hungertime = 250 //aka max hunger
 hungerspeed = 5000 //bigger # = slower hungering
 hungertime = choose(250,300) //aka max hunger
