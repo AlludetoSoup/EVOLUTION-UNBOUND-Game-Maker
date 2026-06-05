@@ -10,7 +10,13 @@ if obj_game_controller.seed != "" {
 	random_set_seed(obj_game_controller.seed)
 }
 frame = 0
-landGrid = mp_grid_create(0, 0, world_size/100, world_size/100, 100, 100)
+landGrid = mp_grid_create(0, 0, (world_size+100)/100, (world_size+100)/100, 100, 100)
+
+for (var cellX = 1; cellX < (world_size+100)/100; cellX++) {
+mp_grid_add_cell(landGrid, cellX, 1)
+show_debug_message(mp_grid_get_cell(landGrid, cellX,1))}
+
+
 show_cloud = false
 show_weather = false
 //x=0

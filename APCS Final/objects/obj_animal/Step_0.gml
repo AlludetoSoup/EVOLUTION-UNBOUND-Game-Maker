@@ -44,6 +44,13 @@ if  path_position = 1 { // if done with a path
 								if move(smell,200) {}//go there if in smell range
 								else {//if not in smell
 									if move(intuition,600) {}//go there if in brain range
+									else {//if no food find and really hungry
+										show_debug_message("no food find") //random wander --v
+										pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+										pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+										mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
+										path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
+									}
 								}
 							}
 						}

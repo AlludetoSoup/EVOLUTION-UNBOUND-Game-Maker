@@ -1,10 +1,10 @@
 {
   "FolderOrderSettings":[
     {"name":"generic obj","order":42,"path":"folders/generic obj.yy",},
-    {"name":"sprites","order":46,"path":"folders/sprites.yy",},
     {"name":"rooms","order":44,"path":"folders/rooms.yy",},
     {"name":"scripts","order":45,"path":"folders/scripts.yy",},
     {"name":"pathing scripts","order":3,"path":"folders/scripts/pathing scripts.yy",},
+    {"name":"sprites","order":46,"path":"folders/sprites.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_ai_sprite","order":14,"path":"objects/obj_ai_sprite/obj_ai_sprite.yy",},
