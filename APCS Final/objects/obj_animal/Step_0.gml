@@ -27,7 +27,10 @@ if Health <= 0 {
 }
 
 if age_hours >= (25*24) and homex = -1 {
-	if abs(ds_grid_get(obj_worldgen.tempGrid, x/100, y/100)-ideal_temp)<0.05{}
+	if abs(ds_grid_get(obj_worldgen.tempGrid, x/100, y/100)-ideal_temp)<0.05{
+		homex=x
+		homey=y
+	}
 }
 
 image_yscale = Height/10
@@ -51,8 +54,13 @@ if  path_position = 1 { // if done with a path
 									if move(intuition,600) {}//go there if in brain range
 									else {//if no food find and really hungry
 										show_debug_message("no food find") //random wander --v
-										pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
-										pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+										if homex = -1 {
+											pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+											pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+										}else {
+											pathx = clamp(homex+random_range(-100, 100)*curiosity,0,obj_worldgen.world_size)
+											pathy = clamp(homey+random_range(-100, 100)*curiosity,0,obj_worldgen.world_size)
+										}
 										mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 										path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 									}
@@ -61,8 +69,14 @@ if  path_position = 1 { // if done with a path
 						}
 						else {//if not really hungery
 							show_debug_message("no food find") //random wander --v
-							pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
-							pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+							if homex = -1 {
+								pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+								pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+							}
+							else {
+								pathx = clamp(homex+random_range(-50, 50)*curiosity,0,obj_worldgen.world_size)
+								pathy = clamp(homey+random_range(-50, 50)*curiosity,0,obj_worldgen.world_size)
+							}
 							mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 							path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 						}
@@ -91,8 +105,14 @@ if  path_position = 1 { // if done with a path
 			else {//if can't smell mate
 				if move(infinity, 2000) {}//wander to mate
 				else {//if no mate found, random wander
-					pathx = clamp(x+random_range(-25,25)*curiosity,0,obj_worldgen.world_size)
-					pathy = clamp(y+random_range(-25,25)*curiosity,0,obj_worldgen.world_size)
+					if homex = -1 {
+						pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+						pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+					}
+					else {
+						pathx = clamp(homex+random_range(-50, 50)*curiosity,0,obj_worldgen.world_size)
+						pathy = clamp(homey+random_range(-50, 50)*curiosity,0,obj_worldgen.world_size)
+					}
 					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 					path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 				}
@@ -116,8 +136,14 @@ if  path_position = 1 { // if done with a path
 						if move(infinity, 2000) {}//wander to mate
 					}
 				}else{ //if young and not hungry, random wander
-					pathx = clamp(x+random_range(-25,25)*curiosity,0,obj_worldgen.world_size)
-					pathy = clamp(y+random_range(-25,25)*curiosity,0,obj_worldgen.world_size)
+					if homex = -1 {
+						pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+						pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+					}
+					else {
+						pathx = clamp(homex+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+						pathy = clamp(homey+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
+					}
 					mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 					path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
 				}			
