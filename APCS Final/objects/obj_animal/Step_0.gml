@@ -25,6 +25,11 @@ else {
 if Health <= 0 {
 	instance_destroy(self)
 }
+
+if age_hours >= (25*24) and homex = -1 {
+	if abs(ds_grid_get(obj_worldgen.tempGrid, x/100, y/100)-ideal_temp)<0.05{}
+}
+
 image_yscale = Height/10
 image_xscale = Width/10
 if  path_position = 1 { // if done with a path

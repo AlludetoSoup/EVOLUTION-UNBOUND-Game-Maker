@@ -1,4 +1,7 @@
 name = instance_number(obj_animal)
+homex = -1
+homey = -1
+ideal_temp=ds_grid_get(obj_worldgen.tempGrid, x/100, y/100)
 path = path_add()
 pathspeed = 1
 pathx = x+1
