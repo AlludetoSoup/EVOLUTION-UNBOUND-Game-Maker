@@ -17,6 +17,9 @@ if changed {
 	with obj_place_animal {
 		instance_destroy()	
 	}
+	with obj_place_bush {
+		instance_destroy()	
+	}
 	i=0
 	x__ = -250-62.5
 	while i < 6 {
@@ -24,6 +27,9 @@ if changed {
 	inst_ =instance_create_layer(x+x__,y-50,"Instances_4",obj_place_land)
 	}
 	else if current_set[i][0] = obj_place_animal {
+	inst_ =instance_create_layer(x+x__,y-50,"Instances_4",obj_place_animal)
+	}
+	else if current_set[i][0] = obj_place_bush {
 	inst_ =instance_create_layer(x+x__,y-50,"Instances_4",obj_place_animal)
 	}
 	inst_.action = current_set[i][1]

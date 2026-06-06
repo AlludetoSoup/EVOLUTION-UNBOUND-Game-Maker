@@ -8,8 +8,10 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_ai_sprite","order":14,"path":"objects/obj_ai_sprite/obj_ai_sprite.yy",},
+    {"name":"obj_animal_placing","order":16,"path":"objects/obj_animal_placing/obj_animal_placing.yy",},
     {"name":"obj_animal","order":43,"path":"objects/obj_animal/obj_animal.yy",},
     {"name":"obj_arrow","order":15,"path":"objects/obj_arrow/obj_arrow.yy",},
+    {"name":"obj_bush_placing","order":18,"path":"objects/obj_bush_placing/obj_bush_placing.yy",},
     {"name":"obj_bush","order":1,"path":"objects/obj_bush/obj_bush.yy",},
     {"name":"obj_button_create","order":2,"path":"objects/obj_button_create/obj_button_create.yy",},
     {"name":"obj_button_save","order":3,"path":"objects/obj_button_save/obj_button_save.yy",},
@@ -20,6 +22,7 @@
     {"name":"obj_grass","order":7,"path":"objects/obj_grass/obj_grass.yy",},
     {"name":"obj_land_placing","order":8,"path":"objects/obj_land_placing/obj_land_placing.yy",},
     {"name":"obj_place_animal","order":9,"path":"objects/obj_place_animal/obj_place_animal.yy",},
+    {"name":"obj_place_bush","order":17,"path":"objects/obj_place_bush/obj_place_bush.yy",},
     {"name":"obj_place_land","order":10,"path":"objects/obj_place_land/obj_place_land.yy",},
     {"name":"obj_sidebar","order":11,"path":"objects/obj_sidebar/obj_sidebar.yy",},
     {"name":"obj_textbox","order":12,"path":"objects/obj_textbox/obj_textbox.yy",},

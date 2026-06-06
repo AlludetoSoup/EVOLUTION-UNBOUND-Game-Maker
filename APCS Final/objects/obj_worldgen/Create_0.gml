@@ -591,8 +591,8 @@ function avg_temp(start_x,start_y) {
 	}
 	return(total/25)
 }
-
-alarm[3] = 1
+//spawn animals
+//alarm[3] = 1
 
 
 

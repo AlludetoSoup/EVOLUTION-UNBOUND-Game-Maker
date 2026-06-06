@@ -1,4 +1,4 @@
-if position_meeting(mouse_x,mouse_y,self) and not obj_camera.spect{
+if position_meeting(mouse_x,mouse_y,self) and not obj_camera.spect and not obj_camera.placing{
 	obj_camera.spect = true
 	obj_camera.delayed_spect=true
 	obj_camera.spect_inst = self
