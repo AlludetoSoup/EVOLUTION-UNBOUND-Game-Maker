@@ -3,7 +3,6 @@
     {"name":"generic obj","order":42,"path":"folders/generic obj.yy",},
     {"name":"rooms","order":44,"path":"folders/rooms.yy",},
     {"name":"scripts","order":45,"path":"folders/scripts.yy",},
-    {"name":"pathing scripts","order":3,"path":"folders/scripts/pathing scripts.yy",},
     {"name":"sprites","order":46,"path":"folders/sprites.yy",},
   ],
   "ResourceOrderSettings":[
@@ -35,6 +34,7 @@
     {"name":"Room1","order":4,"path":"rooms/Room1/Room1.yy",},
     {"name":"scr_instance_nearest_notme","order":1,"path":"scripts/scr_instance_nearest_notme/scr_instance_nearest_notme.yy",},
     {"name":"scr_locate","order":2,"path":"scripts/scr_locate/scr_locate.yy",},
+    {"name":"scr_move_on_path","order":4,"path":"scripts/scr_move_on_path/scr_move_on_path.yy",},
     {"name":"shdr_cloud","order":19,"path":"shaders/shdr_cloud/shdr_cloud.yy",},
     {"name":"spr_arrow","order":22,"path":"sprites/spr_arrow/spr_arrow.yy",},
     {"name":"spr_bg_homescreen","order":2,"path":"sprites/spr_bg_homescreen/spr_bg_homescreen.yy",},
@@ -51,6 +51,7 @@
     {"name":"spr_button_save3","order":12,"path":"sprites/spr_button_save3/spr_button_save3.yy",},
     {"name":"spr_button_start","order":13,"path":"sprites/spr_button_start/spr_button_start.yy",},
     {"name":"spr_cactus","order":14,"path":"sprites/spr_cactus/spr_cactus.yy",},
+    {"name":"spr_corpse","order":25,"path":"sprites/spr_corpse/spr_corpse.yy",},
     {"name":"spr_decrease1","order":15,"path":"sprites/spr_decrease1/spr_decrease1.yy",},
     {"name":"spr_decrease10","order":23,"path":"sprites/spr_decrease10/spr_decrease10.yy",},
     {"name":"spr_dirt","order":16,"path":"sprites/spr_dirt/spr_dirt.yy",},

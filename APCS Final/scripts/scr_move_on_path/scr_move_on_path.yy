@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_move_on_path",
   "parent":{
-    "name":"pathing scripts",
-    "path":"folders/scripts/pathing scripts.yy",
+    "name":"scripts",
+    "path":"folders/scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

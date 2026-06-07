@@ -12,6 +12,14 @@ draw_circle_colour(x, y, smell*10, c_red, c_orange, true)
 draw_circle_colour(x, y, intuition*10, c_red, c_yellow, true)
 if pot_target != ""{
 	if instance_exists(pot_target) {
-		draw_rectangle(pot_target.x-50, pot_target.y-50, pot_target.x+50, pot_target.y+50, true)}
+		draw_rectangle(pot_target.x-50, pot_target.y-50, pot_target.x+50, pot_target.y+50, true)
+	}
+}else{
+	draw_rectangle(x-50, y-50, x+50, y+50, true)
+}
+if last_pot_target != ""{
+	if instance_exists(last_pot_target) {
+		draw_rectangle_colour(last_pot_target.x-50, last_pot_target.y-50, last_pot_target.x+50, last_pot_target.y+50, c_black,c_black,c_black,c_black,true)
+	}
 }
 draw_self()

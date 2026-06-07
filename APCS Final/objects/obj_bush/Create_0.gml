@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+bush = true
 check = 0
 function check_spr() {
 	if stage = 1 {

@@ -152,7 +152,6 @@ for (var cellX = 0; cellX < gridWidth; cellX++) {
 
         if (value < 0.4) {
             terrainGrid[# cellX, cellY] = "water"
-			mp_grid_add_cell(landGrid,cellX,cellY)
         }
         else if (value < 0.43) {
             terrainGrid[# cellX, cellY] = "sand"

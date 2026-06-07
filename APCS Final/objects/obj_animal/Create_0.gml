@@ -6,14 +6,15 @@ path = path_add()
 pathspeed = 1
 pathx = x+1
 pathy = y+1
-pot_target = self
+pot_target = ""
+last_pot_target=""
 bred = 0
 breed_mate = 0
 alarm0max=-1
 mp_potential_settings(45, 5, 5, 0)
 mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 moving = false
-path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, false)
+path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, true)
 age=0
 //traits
 Health = 100
@@ -33,11 +34,11 @@ hungerspeed = 5000 //bigger # = slower hungering
 hungertime = choose(250,300) //aka max hunger
 hungerspeed = 5 //bigger # = slower hungering
 starvationtime = 20 //bigger # = slower starvation
-lifespan = choose(50,75)
+lifespan = choose(20,35)
 sight = 30
 smell = 50
 skin = 10
-fertile_age=10
+fertile_age=1
 skin_extrusion = 0
 muscle_mass_limb = 10
 sex=irandom(1)
