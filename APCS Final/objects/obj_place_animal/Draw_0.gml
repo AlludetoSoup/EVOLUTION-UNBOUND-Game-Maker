@@ -3,4 +3,4 @@
 
 draw_set_alpha(1)
 size = 50*image_xscale
-draw_sprite_stretched(spr_amoeba,-1,x-50,y-50,size,size)
+draw_sprite_stretched(spr_amoeba,-1,x-size/2,y-size/2,size,size)

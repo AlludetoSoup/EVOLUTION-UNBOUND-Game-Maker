@@ -8,4 +8,4 @@ save2 = ""
 save3 = ""
 
 
-global.general_traits=[]
+//global.general_traits=[]

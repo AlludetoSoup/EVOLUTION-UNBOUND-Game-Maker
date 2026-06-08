@@ -3,8 +3,8 @@ for (i=0;i<array_length(traits);i++){
 		changes++
 	}
 }
-//if changes >= array_length(traits)/3 {
+if changes >= array_length(traits)/3 {
 	asking=irandom_range(1,99)
-	speciation(string(asking),asking,species)
-	alarm[3]=5
-//}
+	speciation("blob",asking)
+	alarm[3]=500
+}
