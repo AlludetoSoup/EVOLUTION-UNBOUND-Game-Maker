@@ -30,7 +30,7 @@ if changed {
 	inst_ =instance_create_layer(x+x__,y-50,"Instances_4",obj_place_animal)
 	}
 	else if current_set[i][0] = obj_place_bush {
-	inst_ =instance_create_layer(x+x__,y-50,"Instances_4",obj_place_animal)
+	inst_ =instance_create_layer(x+x__,y-50,"Instances_4",obj_place_bush)
 	}
 	inst_.action = current_set[i][1]
 	inst_._x = x__
