@@ -249,7 +249,7 @@ traits={"health":Health,"height":Height,"width":Width,"strength":strength,"agili
 if list_traits[0]=""{
 	array_delete(list_traits,0,1)
 	for (i=0;i<=array_length(struct_names_count(traits));i++){
-		array_insert(list_traits,i,traits[struct_get_names(traits)[i]])
+		array_insert(list_traits,i,struct_get(traits,struct_get_names(traits)[i]))
 		show_debug_message(string(list_traits))
 	}
 }

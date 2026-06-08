@@ -7,4 +7,4 @@ save1 = ""
 save2 = ""
 save3 = ""
 
-global.general_traits=[]
+global.general_traits=[[owen put te default triats of ameoba here and itll work (at least i think it will)]]
