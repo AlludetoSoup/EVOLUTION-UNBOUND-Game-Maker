@@ -6,3 +6,5 @@ fullscreen = false
 save1 = ""
 save2 = ""
 save3 = ""
+
+global.general_traits=[]

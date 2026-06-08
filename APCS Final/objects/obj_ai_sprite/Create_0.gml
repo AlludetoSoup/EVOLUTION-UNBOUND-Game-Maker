@@ -1,8 +1,9 @@
 description = "" //prompt here
-prompt = "imagine a "+description +"with NO TEXT 32-bit pixel art full side profile view clean lines isolated on a solid pink background"
+prompt = "imagine a blue "+description +"with NO TEXT 32-bit pixel art full front profile no shadow view clean lines isolated on a solid pink background"
 encoded_prompt = string_replace_all(prompt, " ", "%20")
-
-seed = string(irandom_range(1, 999999))
+ask=0
+asking=0
+seed = string(irandom_range(1, 99999))
 key = "sk_iUkFIUkdKGYEO8OFmYb9zfy6bcm9ryy6" 
 
 url = "https://gen.pollinations.ai/image/" + encoded_prompt + "?width=256"+ "&height=256"+ "&seed=" + seed + "&model=zimage"+ "&nologo=true" + "&enhance=false" + "&key=" + key
