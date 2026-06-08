@@ -1,4 +1,4 @@
-for (i=0;i>=array_length(traits);i++){
+for (i=0;i<=array_length(traits);i++){
 	if (list_traits[i]/global.general_traits[species][i])>(1.25)or(list_traits[i]/global.general_traits[species][i])<(0.75){
 		changes++
 	}
