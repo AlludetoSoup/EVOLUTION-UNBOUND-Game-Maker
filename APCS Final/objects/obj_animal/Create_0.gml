@@ -51,5 +51,5 @@ age_hours = 0
 last_age = 0
 
 
-alarm[2]=100
+alarm[2]=1
 
