@@ -6,8 +6,9 @@ if not obj_bottombar.selecting {
 		keys = struct_get_names(obj_camera.default_traits[action])
 		for (i=0;i<array_length(keys);i+=1) {
 			if keys[i] != "sprite_index" {
-				show_debug_message(struct_get(obj_camera.default_traits[action],[keys[i]]))
 			variable_instance_set(animal, keys[i], struct_get(obj_camera.default_traits[action],keys[i]))
+			
+			
 			}
 			else{
 			animal.sprite_index = asset_get_index(struct_get(obj_camera.default_traits[action],keys[i]))

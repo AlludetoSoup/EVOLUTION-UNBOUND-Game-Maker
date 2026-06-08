@@ -7,5 +7,5 @@ save1 = ""
 save2 = ""
 save3 = ""
 
+test_num = 0
 
-//global.general_traits=[]

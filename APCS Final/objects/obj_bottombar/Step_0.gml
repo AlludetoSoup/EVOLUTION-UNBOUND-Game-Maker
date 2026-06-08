@@ -39,4 +39,6 @@ if changed {
 	i+=1
 	}
 	changed = false
+	show_debug_message("here")
+	show_debug_message(instance_number(obj_place_animal))
 }

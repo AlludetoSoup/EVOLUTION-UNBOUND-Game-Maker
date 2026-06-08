@@ -244,7 +244,7 @@ if age >= lifespan {
 	else{instance_destroy()}
 }
 
-traits={"health":Health,"height":Height,"width":Width,"strength":strength,"agility":agility,"breath":breath,"children_num":children_num,"intellegence":intelligence,"intuition":intuition,"accuracy":accuracy,"curiosity":curiosity,"hungertime":hungertime,"hungerspeed":hungerspeed,"starvationtime":starvationtime,"lifespan":lifespan,"sight":sight,"smell":smell,"skin":skin,"skin_extrusion":skin_extrusion,"muscle_mass_limb":muscle_mass_limb}
+traits={"Health":Health,"Height":Height,"Width":Width,"strength":strength,"agility":agility,"breath":breath,"children_num":children_num,"intelligence":intelligence,"intuition":intuition,"accuracy":accuracy,"curiosity":curiosity,"hungertime":hungertime,"hungerspeed":hungerspeed,"starvationtime":starvationtime,"lifespan":lifespan,"sight":sight,"smell":smell,"skin":skin,"fertile_age":10,"skin_extrusion":skin_extrusion,"muscle_mass_limb":muscle_mass_limb}
 
 if list_traits[0]=""{
 	array_delete(list_traits,0,1)
