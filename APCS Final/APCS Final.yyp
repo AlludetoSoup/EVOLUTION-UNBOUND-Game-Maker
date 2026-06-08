@@ -56,6 +56,7 @@
     {"id":{"name":"scr_instance_nearest_notme","path":"scripts/scr_instance_nearest_notme/scr_instance_nearest_notme.yy",},},
     {"id":{"name":"scr_locate","path":"scripts/scr_locate/scr_locate.yy",},},
     {"id":{"name":"scr_move_on_path","path":"scripts/scr_move_on_path/scr_move_on_path.yy",},},
+    {"id":{"name":"scr_speciation","path":"scripts/scr_speciation/scr_speciation.yy",},},
     {"id":{"name":"shdr_cloud","path":"shaders/shdr_cloud/shdr_cloud.yy",},},
     {"id":{"name":"spr_amoeba","path":"sprites/spr_amoeba/spr_amoeba.yy",},},
     {"id":{"name":"spr_arrow","path":"sprites/spr_arrow/spr_arrow.yy",},},
@@ -90,8 +91,8 @@
     {"roomId":{"name":"Room_menu","path":"rooms/Room_menu/Room_menu.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"Room_saves","path":"rooms/Room_saves/Room_saves.yy",},},
-    {"roomId":{"name":"rm_spr_test","path":"rooms/rm_spr_test/rm_spr_test.yy",},},
     {"roomId":{"name":"Room_world_settings","path":"rooms/Room_world_settings/Room_world_settings.yy",},},
+    {"roomId":{"name":"rm_spr_test","path":"rooms/rm_spr_test/rm_spr_test.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

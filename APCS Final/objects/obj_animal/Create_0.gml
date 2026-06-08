@@ -16,6 +16,10 @@ mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 moving = false
 path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, true)
 age=0
+list_traits=[]
+//working on this var
+species=0
+asking=0
 //traits
 Health = 100
 Health = choose(100,150)
@@ -46,4 +50,6 @@ hungry = hungertime
 age_hours = 0
 last_age = 0
 
+
+alarm[2]=1
 
