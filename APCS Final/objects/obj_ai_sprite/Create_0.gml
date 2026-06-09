@@ -1,6 +1,6 @@
 ready=true
 noegg=false
-prompt = "imagine a blue "+"blob that has 100% heartiness, 100% height, 100% width, 80% strength, 200% eye size, 10% nose size, 50% head size, and 0% fur amount"+ " 32-bit pixel art full front profile no shadow view clean lines isolated on a solid pink background"
+
 prompt="blue blob 32-bit pixel art full front profile no shadow view clean lines isolated on a solid pink background"
 encoded_prompt = string_replace_all(prompt, " ", "%20")
 ask=0
