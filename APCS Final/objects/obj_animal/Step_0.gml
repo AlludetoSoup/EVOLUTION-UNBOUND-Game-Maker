@@ -3,7 +3,7 @@ if alarm0max != 10000/obj_time_controller.rate and alarm0max != -1 and alarm[0] 
 	previous = alarm[0]
 	alarm[0]=(10000/obj_time_controller.rate)*(alarm[0]/alarm0max)
 	alarm0max=10000/obj_time_controller.rate
-	show_debug_message(string_concat("alarm0 changed from ",string(previous)," to ",string(alarm[0])))
+	//show_debug_message(string_concat("alarm0 changed from ",string(previous)," to ",string(alarm[0])))
 }
 
 
@@ -57,7 +57,7 @@ if  path_position = 1 { // if done with a path
 									else {//if not in smell
 										if move(intuition,600) {}//go there if in brain range
 										else {//if no food find and really hungry
-											//show_debug_message("no food find") //random wander --v
+											////show_debug_message("no food find") //random wander --v
 											if homex = -1 {
 												pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 												pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
@@ -71,7 +71,7 @@ if  path_position = 1 { // if done with a path
 									}
 								}
 							}else {//if not really hungery
-							//show_debug_message("no food find") //random wander --v
+							////show_debug_message("no food find") //random wander --v
 							if homex = -1 {
 								pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 								pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
@@ -85,7 +85,7 @@ if  path_position = 1 { // if done with a path
 						}
 						}
 						else {//if not really hungery
-							//show_debug_message("no food find") //random wander --v
+							////show_debug_message("no food find") //random wander --v
 							if homex = -1 {
 								pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 								pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
@@ -112,7 +112,7 @@ if  path_position = 1 { // if done with a path
 						}
 					}
 				}else {//if not really hungery
-							//show_debug_message("no food find") //random wander --v
+							////show_debug_message("no food find") //random wander --v
 							if homex = -1 {
 								pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 								pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
@@ -131,7 +131,8 @@ if  path_position = 1 { // if done with a path
 	else {//not hungry
 		if sex = 1 and age >= fertile_age{//if fertile male
 			pot_target = locate(obj_animal, "sex", 0) //find mate
-			if pot_target = "" {show_debug_message("guy blind")}
+			if pot_target = "" {//show_debug_message("guy blind")
+			}
 			if pot_target != "" and last_pot_target != pot_target.x { //if mate was found and it wast't a repeat
 				if move(smell, 50) {}//go to mate if can smell
 				else {//if can't smell mate
@@ -150,7 +151,7 @@ if  path_position = 1 { // if done with a path
 					}
 				}
 			}else {
-							show_debug_message("no find") //random wander --v
+							//show_debug_message("no find") //random wander --v
 							if homex = -1 {
 								pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 								pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
@@ -167,14 +168,15 @@ if  path_position = 1 { // if done with a path
 			if age >= fertile_age{ //if fertile
 			
 				pot_target = locate(obj_animal, "sex", 1) //find mate (male)
-				if pot_target = "" {show_debug_message("girl blind")}
+				if pot_target = "" {//show_debug_message("girl blind")
+					}
 				if pot_target != "" and last_pot_target != pot_target.x { //if mate was found and it wast't a repeat
 					if move(smell, 50) {}//go to mate if can smell
 					else {//if can't smell mate
 						if move(infinity, 2000) {}//wander to mate
 					}
 				}else {//if not really hungery
-							//show_debug_message("no food find") //random wander --v
+							////show_debug_message("no food find") //random wander --v
 							if homex = -1 {
 								pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 								pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
@@ -202,6 +204,7 @@ if  path_position = 1 { // if done with a path
 			}
 		}	
 	}
+	
 
 if x != clamp(x, 100, obj_worldgen.world_size-100) or y != clamp(y, 1000, obj_worldgen.world_size-1000) {
     path_end()
@@ -234,4 +237,7 @@ if list_traits[0]=""{
 	}
 }
 
-
+if array_length( obj_camera.default_traits) > 1 { 
+def_traits = obj_camera.default_traits[species]
+sprite_index =asset_get_index(struct_get(def_traits,"sprite_index"))
+}

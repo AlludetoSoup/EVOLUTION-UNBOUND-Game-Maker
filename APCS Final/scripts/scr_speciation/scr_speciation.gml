@@ -5,5 +5,5 @@ function speciation(prompt,asking,_self){
 	_traits = _self.traits
 	variable_struct_set(_traits,"sprite_index",spr_amoeba) //change spr to ai spr later
 	array_push(obj_camera.default_traits,_traits)
-	array_push(obj_camera.bar_tools,[obj_place_animal, (obj_camera.bar_tools[array_length(obj_camera.bar_tools)-1][1])+1])
+	array_push(obj_camera.bar_tools,[obj_place_animal, _self.species])
 }

@@ -239,9 +239,9 @@ for (var l = 0; l < 7; l++){
 		}
 }
 
-show_debug_message("Fixed ")
-show_debug_message(fixed)
-show_debug_message(" Mistakes")
+//show_debug_message("Fixed ")
+//show_debug_message(fixed)
+//show_debug_message(" Mistakes")
 
 
 

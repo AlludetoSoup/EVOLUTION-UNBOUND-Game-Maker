@@ -192,7 +192,7 @@ fixed = 0
 //fix world gen
 
 //order is water, sand, grass, mountain, snow
-show_debug_message("starting double check")
+//show_debug_message("starting double check")
 for (var l = 0; l < 10; l++){
 
 		for (var cellX = 0; cellX < gridWidth; cellX++) {
@@ -390,7 +390,7 @@ function check_square_B(X,Y){
 }
 
 
-show_debug_message("starting double check for biomes")
+//show_debug_message("starting double check for biomes")
 for (var l = 0; l < 3; l++){
 
 		for (var cellX = 0; cellX < gridWidth; cellX++) {
@@ -548,10 +548,10 @@ for (var cellX = 0; cellX < gridWidth; cellX++) {
 
 		if biomeGrid[# cellX,cellY]= "tundra" or biomeGrid[# cellX,cellY] = "forest" or biomeGrid[# cellX,cellY] = "savanna" or biomeGrid[# cellX,cellY] = "desert"{
 			num = irandom(100)
-			if biomeGrid[# cellX,cellY]= "tundra" and num > 98 {
+			if biomeGrid[# cellX,cellY]= "tundra" and num > 97 {
 				instance_create_layer(cellX*100+50,cellY*100+50,"Instances_1", obj_bush)
 			}
-			else if biomeGrid[# cellX,cellY]= "forest" and num > 97 {
+			else if biomeGrid[# cellX,cellY]= "forest" and num > 95 {
 				instance_create_layer(cellX*100+50,cellY*100+50,"Instances_1", obj_bush)
 			}
 			else if biomeGrid[# cellX,cellY]= "tundra" and num < 5 {
@@ -575,9 +575,9 @@ for (var cellX = 0; cellX < gridWidth; cellX++) {
 
 
 
-show_debug_message("Fixed ")
-show_debug_message(fixed)
-show_debug_message(" Mistakes")	
+//show_debug_message("Fixed ")
+//show_debug_message(fixed)
+//show_debug_message(" Mistakes")	
 
 function avg_temp(start_x,start_y) {
 	total = 0

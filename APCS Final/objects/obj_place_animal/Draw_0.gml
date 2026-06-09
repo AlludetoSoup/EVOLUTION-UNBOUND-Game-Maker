@@ -3,4 +3,9 @@
 
 draw_set_alpha(1)
 size = 50*image_xscale
-draw_sprite_stretched(spr_amoeba,-1,x-size/2,y-size/2,size,size)
+if array_length(obj_camera.default_traits) > 1 {
+draw_sprite_stretched(asset_get_index(struct_get(obj_camera.default_traits[action],"sprite_index")),-1,x-size/2,y-size/2,size,size)
+}
+else{
+draw_sprite_stretched(spr_amoeba,-1,x-size/2,y-size/2,size,size)	
+}

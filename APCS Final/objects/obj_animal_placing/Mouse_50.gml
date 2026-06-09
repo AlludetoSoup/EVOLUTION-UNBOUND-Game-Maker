@@ -7,6 +7,7 @@ if not obj_bottombar.selecting {
 		for (i=0;i<array_length(keys);i+=1) {
 			if keys[i] != "sprite_index" {
 			variable_instance_set(animal, keys[i], struct_get(obj_camera.default_traits[action],keys[i]))
+			animal.species = action
 			
 			
 			}

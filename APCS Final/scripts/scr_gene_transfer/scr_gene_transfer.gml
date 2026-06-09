@@ -2,7 +2,7 @@ function scr_gene_transfer(parent1_stats,parent2_stats){
 		p1_traits_arr=variable_struct_get_names(parent1_stats)
 		p2_traits_arr=variable_struct_get_names(parent2_stats)
 		child_list = {}
-		//show_debug_message(array_length(p1_traits_arr))
+		////show_debug_message(array_length(p1_traits_arr))
 		child = instance_create_layer(x+random_range(-100,100),y+random_range(-100,100),"Instances_1",obj_animal)
 		for(i=0; i < array_length(p1_traits_arr)-1; i++){
 			p1_key= p1_traits_arr[i]

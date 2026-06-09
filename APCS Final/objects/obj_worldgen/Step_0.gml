@@ -1,5 +1,5 @@
-//show_debug_message(mouse_x)
-//show_debug_message(mouse_y)
+////show_debug_message(mouse_x)
+////show_debug_message(mouse_y)
 /// @description Insert description here
 // You can write your code in this editor
 x_ = obj_camera.x
