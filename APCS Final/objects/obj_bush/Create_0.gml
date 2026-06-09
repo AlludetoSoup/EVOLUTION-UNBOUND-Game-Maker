@@ -15,10 +15,10 @@ function check_spr() {
 		sprite_index = spr_bush_l3
 	}
 	else if stage = 4 {
-		sprite_index = spr_bush_l4
+		sprite_index = spr_bush_l5
 	}
 	else if stage = 5 {
-		sprite_index = spr_bush_l5
+		sprite_index = spr_bush_l4
 	}
 }
 
