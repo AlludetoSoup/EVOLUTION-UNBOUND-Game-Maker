@@ -27,9 +27,11 @@ if Health <= 0 {
 }
 
 if age_hours >= (25*24) and homex = -1 {
-	if abs(ds_grid_get(obj_worldgen.tempGrid, x/100, y/100)-ideal_temp)<0.05{
-		homex=x
-		homey=y
+	if x/100 < 100 and y/100 <100 {
+		if abs(ds_grid_get(obj_worldgen.tempGrid, x/100, y/100)-ideal_temp)<0.05{
+			homex=x
+			homey=y
+		}
 	}
 }
 
@@ -55,7 +57,7 @@ if  path_position = 1 { // if done with a path
 									else {//if not in smell
 										if move(intuition,600) {}//go there if in brain range
 										else {//if no food find and really hungry
-											show_debug_message("no food find") //random wander --v
+											//show_debug_message("no food find") //random wander --v
 											if homex = -1 {
 												pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 												pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
@@ -69,7 +71,7 @@ if  path_position = 1 { // if done with a path
 									}
 								}
 							}else {//if not really hungery
-							show_debug_message("no food find") //random wander --v
+							//show_debug_message("no food find") //random wander --v
 							if homex = -1 {
 								pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 								pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
@@ -83,7 +85,7 @@ if  path_position = 1 { // if done with a path
 						}
 						}
 						else {//if not really hungery
-							show_debug_message("no food find") //random wander --v
+							//show_debug_message("no food find") //random wander --v
 							if homex = -1 {
 								pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 								pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
@@ -110,7 +112,7 @@ if  path_position = 1 { // if done with a path
 						}
 					}
 				}else {//if not really hungery
-							show_debug_message("no food find") //random wander --v
+							//show_debug_message("no food find") //random wander --v
 							if homex = -1 {
 								pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 								pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
@@ -172,7 +174,7 @@ if  path_position = 1 { // if done with a path
 						if move(infinity, 2000) {}//wander to mate
 					}
 				}else {//if not really hungery
-							show_debug_message("no food find") //random wander --v
+							//show_debug_message("no food find") //random wander --v
 							if homex = -1 {
 								pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 								pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
@@ -193,7 +195,7 @@ if  path_position = 1 { // if done with a path
 							if move(infinity, 2000) {}//wander to mate
 						}
 				}else {//if not really hungery
-							show_debug_message("no food find") //random wander --v
+							//show_debug_message("no food find") //random wander --v
 							if homex = -1 {
 								pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 								pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)

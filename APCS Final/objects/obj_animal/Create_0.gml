@@ -11,6 +11,7 @@ last_pot_target=""
 bred = 0
 breed_mate = 0
 alarm0max=-1
+ideal_temp = 50
 mp_potential_settings(45, 5, 5, 0)
 mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 moving = false
@@ -51,5 +52,5 @@ age_hours = 0
 last_age = 0
 
 
-alarm[2]=1
+alarm[2]=5
 
