@@ -1,5 +1,17 @@
 /// @description Insert description here
 // You can write your code in this editor
+if New {
+	with obj_bush {
+		if id != other.id{
+			if x = other.x and y = other.y {instance_destroy()}
+		}
+	}
+	with obj_tree {
+		if id != other.id{
+			if x = other.x and y = other.y {instance_destroy()}
+		}
+	}
+}
 if bush {
 	if grow_timer != 5{
 	grow_timer += obj_time_controller.rate

@@ -2,6 +2,8 @@
 // You can write your code in this editor
 bush = true
 check = 0
+New=true
+alarm[0]=5
 function check_spr() {
 	if stage = 1 {
 		sprite_index = spr_bush_l1

@@ -60,6 +60,7 @@
     {"name":"spr_increase1","order":18,"path":"sprites/spr_increase1/spr_increase1.yy",},
     {"name":"spr_increase10","order":24,"path":"sprites/spr_increase10/spr_increase10.yy",},
     {"name":"spr_place_land","order":19,"path":"sprites/spr_place_land/spr_place_land.yy",},
+    {"name":"spr_remove","order":26,"path":"sprites/spr_remove/spr_remove.yy",},
     {"name":"spr_sidebar","order":20,"path":"sprites/spr_sidebar/spr_sidebar.yy",},
     {"name":"spr_tree","order":21,"path":"sprites/spr_tree/spr_tree.yy",},
   ],

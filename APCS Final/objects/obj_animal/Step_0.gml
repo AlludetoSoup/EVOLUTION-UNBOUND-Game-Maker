@@ -130,7 +130,7 @@ if  path_position = 1 { // if done with a path
 	}
 	else {//not hungry
 		if sex = 1 and age >= fertile_age{//if fertile male
-			pot_target = locate(obj_animal, "sex", 0, "bred", 0) //find mate (unbred female)
+			pot_target = locate(obj_animal, "sex", 0) //find mate
 			if pot_target = "" {show_debug_message("guy blind")}
 			if pot_target != "" and last_pot_target != pot_target.x { //if mate was found and it wast't a repeat
 				if move(smell, 50) {}//go to mate if can smell
@@ -164,7 +164,7 @@ if  path_position = 1 { // if done with a path
 						}
 		}
 		else {//if female
-			if age >= fertile_age and breed_mate=0{ //if fertile and unmated
+			if age >= fertile_age{ //if fertile
 			
 				pot_target = locate(obj_animal, "sex", 1) //find mate (male)
 				if pot_target = "" {show_debug_message("girl blind")}
@@ -186,28 +186,8 @@ if  path_position = 1 { // if done with a path
 							mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
 							path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, true)
 						}
-			}else{//if mated
-				if age >= fertile_age { //if fertile
-					pot_target = locate(obj_animal, "name", breed_mate) //find mate (specific male)
-					if pot_target != "" and last_pot_target != pot_target.x { //if mate was found and it wast't a repeat
-						if move(smell, 50) {}//go to mate if can smell
-						else {//if can't smell mate
-							if move(infinity, 2000) {}//wander to mate
-						}
-				}else {//if not really hungery
-							//show_debug_message("no food find") //random wander --v
-							if homex = -1 {
-								pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
-								pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
-							}
-							else {
-								pathx = clamp(homex+random_range(-50, 50)*curiosity,0,obj_worldgen.world_size)
-								pathy = clamp(homey+random_range(-50, 50)*curiosity,0,obj_worldgen.world_size)
-							}
-							mp_grid_path(obj_worldgen.landGrid, path, x, y, pathx, pathy, true)
-							path_start(path, pathspeed*obj_time_controller.rate,path_action_stop, true)
-						}
-				}else{ //if young and not hungry, random wander
+			}else{
+				 //if young and not hungry, random wander
 					if homex = -1 {
 						pathx = clamp(x+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
 						pathy = clamp(y+random_range(-25, 25)*curiosity,0,obj_worldgen.world_size)
@@ -222,7 +202,6 @@ if  path_position = 1 { // if done with a path
 			}
 		}	
 	}
-}
 
 if x != clamp(x, 100, obj_worldgen.world_size-100) or y != clamp(y, 1000, obj_worldgen.world_size-1000) {
     path_end()

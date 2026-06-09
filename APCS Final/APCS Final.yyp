@@ -82,6 +82,7 @@
     {"id":{"name":"spr_increase1","path":"sprites/spr_increase1/spr_increase1.yy",},},
     {"id":{"name":"spr_increase10","path":"sprites/spr_increase10/spr_increase10.yy",},},
     {"id":{"name":"spr_place_land","path":"sprites/spr_place_land/spr_place_land.yy",},},
+    {"id":{"name":"spr_remove","path":"sprites/spr_remove/spr_remove.yy",},},
     {"id":{"name":"spr_sidebar","path":"sprites/spr_sidebar/spr_sidebar.yy",},},
     {"id":{"name":"spr_tree","path":"sprites/spr_tree/spr_tree.yy",},},
   ],

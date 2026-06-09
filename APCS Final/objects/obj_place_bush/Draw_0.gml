@@ -13,3 +13,6 @@ draw_sprite_stretched(spr_tree,-1,x-size/2,y-size/2,size,size)
 if action=2{
 draw_sprite_stretched(spr_cactus,-1,x-size/2,y-size/2,size,size)
 }
+if action=3{
+draw_sprite_stretched(spr_remove,-1,x-size/2,y-size/2,size,size)
+}
