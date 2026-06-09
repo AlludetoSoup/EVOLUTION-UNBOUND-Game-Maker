@@ -5,7 +5,7 @@ var c_puke_green = $447711
 var c_light_blue = $FFAA33
 var c_sand = $33AAFF
 var tileSize = 100;
-
+sand_color = make_color_rgb(225, 188, 109);
 //custom colors
 
 draw_set_alpha(1)
@@ -55,7 +55,7 @@ for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
                 draw_set_color(c_sand);
                 break;
 			case "beach":
-                draw_set_color(c_yellow);
+                draw_set_color(sand_color);
                 break;
         }
 
