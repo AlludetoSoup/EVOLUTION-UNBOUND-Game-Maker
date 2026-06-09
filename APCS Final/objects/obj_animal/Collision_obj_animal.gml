@@ -5,7 +5,7 @@ if pot_target != "" and instance_exists(pot_target){
 				//show_debug_message("breed")
 				var kids = children_num+irandom_range(-1,1)
 				for (var i=kids;i>0;i=i-1) {
-					scr_gene_transfer(traits, other.traits)
+					scr_gene_transfer(traits, other.traits,self)
 				}
 				hungry=hungertime/5
 				breed_mate=1
