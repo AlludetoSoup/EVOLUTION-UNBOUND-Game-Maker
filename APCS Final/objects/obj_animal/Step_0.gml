@@ -1,4 +1,9 @@
+
+traits={"Health":Health,"Height":Height,"Width":Width,"strength":strength,"agility":agility,"breath":breath,"children_num":children_num,"intelligence":intelligence,"intuition":intuition,"accuracy":accuracy,"curiosity":curiosity,"hungertime":hungertime,"hungerspeed":hungerspeed,"starvationtime":starvationtime,"lifespan":lifespan,"sight":sight,"smell":smell,"skin":skin,"fertile_age":10,"skin_extrusion":skin_extrusion,"muscle_mass_limb":muscle_mass_limb}
+
+
 //automatically change running alarm times to match game speed (this is for breeding cooldown so important)
+
 if alarm0max != 10000/obj_time_controller.rate and alarm0max != -1 and alarm[0] != -1 {
 	previous = alarm[0]
 	alarm[0]=(10000/obj_time_controller.rate)*(alarm[0]/alarm0max)
@@ -228,7 +233,7 @@ if age >= lifespan {
 	else{instance_destroy()}
 }
 
-traits={"Health":Health,"Height":Height,"Width":Width,"strength":strength,"agility":agility,"breath":breath,"children_num":children_num,"intelligence":intelligence,"intuition":intuition,"accuracy":accuracy,"curiosity":curiosity,"hungertime":hungertime,"hungerspeed":hungerspeed,"starvationtime":starvationtime,"lifespan":lifespan,"sight":sight,"smell":smell,"skin":skin,"fertile_age":10,"skin_extrusion":skin_extrusion,"muscle_mass_limb":muscle_mass_limb}
+
 
 if list_traits[0]=""{
 	array_delete(list_traits,0,1)

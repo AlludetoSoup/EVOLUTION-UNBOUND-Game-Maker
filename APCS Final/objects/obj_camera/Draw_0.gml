@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+
 if spect {
-font = font_add("Arial",30,false,true,1,1)
-font2 = font_add("Arial",45,false,true,1,1)
+
 draw_set_font(font2)
 draw_set_halign(fa_center)
 draw_set_valign(fa_center)
@@ -33,3 +33,6 @@ draw_text_colour(x+600,y+775,string_concat("Strength: ",string(obj_camera.spect_
 
 }
 
+
+draw_set_font(font3)
+draw_text_colour(x-(950*(obj_camera.size/2000)),y+(925*(obj_camera.size/2000)),string_concat("Population: ",string(instance_number(obj_animal))),c_black,c_black,c_black,c_black,1)

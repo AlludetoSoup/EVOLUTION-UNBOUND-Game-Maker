@@ -14,3 +14,4 @@ temp_increase = -13.235294121
 last_day = 0
 day_past = 0
 last_year= 0
+font = font_add("Arial",10*(2),false,true,1,1)
