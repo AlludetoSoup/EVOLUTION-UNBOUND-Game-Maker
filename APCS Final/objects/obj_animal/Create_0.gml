@@ -50,7 +50,9 @@ sex=irandom(1)
 hungry = hungertime
 age_hours = 0
 last_age = 0
-
-
+traits={"Health":Health,"Height":Height,"Width":Width,"strength":strength,"agility":agility,"breath":breath,"children_num":children_num,"intelligence":intelligence,"intuition":intuition,"accuracy":accuracy,"curiosity":curiosity,"hungertime":hungertime,"hungerspeed":hungerspeed,"starvationtime":starvationtime,"lifespan":lifespan,"sight":sight,"smell":smell,"skin":skin,"fertile_age":10,"skin_extrusion":skin_extrusion,"muscle_mass_limb":muscle_mass_limb}
+same_species = 0
+new_sprite = ""
+first = false
 alarm[2]=5
 

@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-if show_cloud {
-	show_cloud = false	
+if show_weather {
+	show_weather = false	
 }
 else{
-show_cloud = true	
+show_weather = true	
 }
