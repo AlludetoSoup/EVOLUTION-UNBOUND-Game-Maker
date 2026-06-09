@@ -24,6 +24,7 @@
     {"name":"obj_place_bush","order":17,"path":"objects/obj_place_bush/obj_place_bush.yy",},
     {"name":"obj_place_land","order":10,"path":"objects/obj_place_land/obj_place_land.yy",},
     {"name":"obj_sidebar","order":11,"path":"objects/obj_sidebar/obj_sidebar.yy",},
+    {"name":"obj_slider","order":19,"path":"objects/obj_slider/obj_slider.yy",},
     {"name":"obj_textbox","order":12,"path":"objects/obj_textbox/obj_textbox.yy",},
     {"name":"obj_time_controller","order":5,"path":"objects/obj_time_controller/obj_time_controller.yy",},
     {"name":"obj_tree","order":13,"path":"objects/obj_tree/obj_tree.yy",},
@@ -62,6 +63,7 @@
     {"name":"spr_place_land","order":19,"path":"sprites/spr_place_land/spr_place_land.yy",},
     {"name":"spr_remove","order":26,"path":"sprites/spr_remove/spr_remove.yy",},
     {"name":"spr_sidebar","order":20,"path":"sprites/spr_sidebar/spr_sidebar.yy",},
+    {"name":"spr_slider","order":27,"path":"sprites/spr_slider/spr_slider.yy",},
     {"name":"spr_tree","order":21,"path":"sprites/spr_tree/spr_tree.yy",},
   ],
 }

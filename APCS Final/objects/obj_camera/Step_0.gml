@@ -3,6 +3,7 @@
 
 rate = obj_camera.size/1000
 if not spect {
+	
 	if keyboard_check(vk_right){
 		if x+(10*rate) <=obj_worldgen.world_size-obj_camera.size/2 {
 			x+= (10*rate)

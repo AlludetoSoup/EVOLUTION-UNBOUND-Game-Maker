@@ -1,8 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 if spect {
-font = font_add("Arial",30,false,true,1,1)
-font2 = font_add("Arial",45,false,true,1,1)
 draw_set_font(font2)
 draw_set_halign(fa_center)
 draw_set_valign(fa_center)
