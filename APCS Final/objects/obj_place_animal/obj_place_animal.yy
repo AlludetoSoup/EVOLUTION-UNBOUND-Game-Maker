@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_place_land",
-    "path":"sprites/spr_place_land/spr_place_land.yy",
+    "name":"spr_loading",
+    "path":"sprites/spr_loading/spr_loading.yy",
   },
   "spriteMaskId":null,
   "visible":true,

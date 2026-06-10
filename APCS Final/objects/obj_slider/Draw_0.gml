@@ -10,4 +10,4 @@ if yfinal=2{y__=center+100*mult}
 if yfinal=1{y__=center+300*mult}
 if yfinal=0{y__=center+450*mult}
 draw_rectangle(x-40*mult,y__+10*mult,x+40*mult,y__-10*mult,false)
-show_debug_message(obj_camera.size)
+//show_debug_message(obj_camera.size)

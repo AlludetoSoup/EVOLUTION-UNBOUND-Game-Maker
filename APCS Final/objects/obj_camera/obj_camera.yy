@@ -22,8 +22,8 @@
   "name":"obj_camera",
   "overriddenProperties":[],
   "parent":{
-    "name":"generic obj",
-    "path":"folders/generic obj.yy",
+    "name":"APCS Final",
+    "path":"APCS Final.yyp",
   },
   "parentObjectId":null,
   "persistent":false,

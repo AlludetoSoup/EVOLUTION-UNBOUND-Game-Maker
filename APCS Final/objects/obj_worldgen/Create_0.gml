@@ -192,7 +192,7 @@ fixed = 0
 //fix world gen
 
 //order is water, sand, grass, mountain, snow
-//show_debug_message("starting double check")
+////show_debug_message("starting double check")
 for (var l = 0; l < 10; l++){
 
 		for (var cellX = 0; cellX < gridWidth; cellX++) {
@@ -390,7 +390,7 @@ function check_square_B(X,Y){
 }
 
 
-//show_debug_message("starting double check for biomes")
+////show_debug_message("starting double check for biomes")
 for (var l = 0; l < 3; l++){
 
 		for (var cellX = 0; cellX < gridWidth; cellX++) {
@@ -575,9 +575,9 @@ for (var cellX = 0; cellX < gridWidth; cellX++) {
 
 
 
-//show_debug_message("Fixed ")
-//show_debug_message(fixed)
-//show_debug_message(" Mistakes")	
+////show_debug_message("Fixed ")
+////show_debug_message(fixed)
+////show_debug_message(" Mistakes")	
 
 function avg_temp(start_x,start_y) {
 	total = 0

@@ -20,7 +20,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2026.0.0.16",
+    "IDEVersion":"2024.14.4.222",
   },
   "name":"APCS Final",
   "resources":[
@@ -76,12 +76,14 @@
     {"id":{"name":"spr_button_start","path":"sprites/spr_button_start/spr_button_start.yy",},},
     {"id":{"name":"spr_cactus","path":"sprites/spr_cactus/spr_cactus.yy",},},
     {"id":{"name":"spr_corpse","path":"sprites/spr_corpse/spr_corpse.yy",},},
+    {"id":{"name":"spr_dead","path":"sprites/spr_dead/spr_dead.yy",},},
     {"id":{"name":"spr_decrease1","path":"sprites/spr_decrease1/spr_decrease1.yy",},},
     {"id":{"name":"spr_decrease10","path":"sprites/spr_decrease10/spr_decrease10.yy",},},
     {"id":{"name":"spr_dirt","path":"sprites/spr_dirt/spr_dirt.yy",},},
     {"id":{"name":"spr_egg","path":"sprites/spr_egg/spr_egg.yy",},},
     {"id":{"name":"spr_increase1","path":"sprites/spr_increase1/spr_increase1.yy",},},
     {"id":{"name":"spr_increase10","path":"sprites/spr_increase10/spr_increase10.yy",},},
+    {"id":{"name":"spr_loading","path":"sprites/spr_loading/spr_loading.yy",},},
     {"id":{"name":"spr_place_land","path":"sprites/spr_place_land/spr_place_land.yy",},},
     {"id":{"name":"spr_remove","path":"sprites/spr_remove/spr_remove.yy",},},
     {"id":{"name":"spr_sidebar","path":"sprites/spr_sidebar/spr_sidebar.yy",},},

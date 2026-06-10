@@ -36,10 +36,10 @@ if changed {
 	inst_.action = current_set[i][1]
 	inst_._x = x__
 	x__ += 125
-
+	
 	i+=1
 	}
 	changed = false
-	//show_debug_message("here")
-	//show_debug_message(instance_number(obj_place_animal))
+	////show_debug_message("here")
+	////show_debug_message(instance_number(obj_place_animal))
 }

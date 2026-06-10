@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+
 rate = obj_camera.size/1000
 if not spect {
 	

@@ -1,7 +1,6 @@
-ready=true
-noegg=false
-
-prompt="blue blob 32-bit pixel art full front profile no shadow view clean lines isolated on a solid pink background"
+fail=false
+a_species=-1
+prompt="blue blob 64-bit pixel art full front profile view clean lines isolated on a solid pink background"
 encoded_prompt = string_replace_all(prompt, " ", "%20")
 ask=0
 asking=0
@@ -15,7 +14,6 @@ file_path = working_directory + "temp_sprite.png"
 if (file_exists(file_path)) { 
     file_delete(file_path) 
 }
-show_debug_message(url)
 request_id = http_get_file(url, file_path)
 sprite_ready = false
 new_creature_sprite = -1
