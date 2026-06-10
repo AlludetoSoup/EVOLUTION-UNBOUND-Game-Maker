@@ -1,4 +1,4 @@
-if not obj_bottombar.selecting {
+if not (obj_bottombar.selecting or obj_slider.hover){
 	if abs(last_place_x-x)>100 or abs(last_place_y-y)>100 {
 		animal = instance_create_layer(x,y,"Instances_1",obj_animal)
 		last_place_x=x

@@ -76,7 +76,6 @@
     {"id":{"name":"spr_button_start","path":"sprites/spr_button_start/spr_button_start.yy",},},
     {"id":{"name":"spr_cactus","path":"sprites/spr_cactus/spr_cactus.yy",},},
     {"id":{"name":"spr_corpse","path":"sprites/spr_corpse/spr_corpse.yy",},},
-    {"id":{"name":"spr_dead","path":"sprites/spr_dead/spr_dead.yy",},},
     {"id":{"name":"spr_decrease1","path":"sprites/spr_decrease1/spr_decrease1.yy",},},
     {"id":{"name":"spr_decrease10","path":"sprites/spr_decrease10/spr_decrease10.yy",},},
     {"id":{"name":"spr_dirt","path":"sprites/spr_dirt/spr_dirt.yy",},},
