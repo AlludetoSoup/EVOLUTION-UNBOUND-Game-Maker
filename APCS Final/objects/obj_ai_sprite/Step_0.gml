@@ -10,11 +10,7 @@ if a!=""{
 	}
 }else{
 	if sprite_exists(new_creature_sprite){
-		fail=true
-		//change the sprite of the obj_place animal that has an action value of a_species
-		//i think
-		//just change the sprite of the obj_place_animal on the bottom bar that has the species this corresponds to
-		//change sprite to spr_dead
+		struct_set(obj_camera.default_traits[a_species],"sprite_index",new_creature_sprite)
 	}
 }
 
