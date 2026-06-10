@@ -1,7 +1,7 @@
 if sex = 1{draw_set_colour(c_blue)}
 else{draw_set_color(c_red)}
-draw_circle_colour(homex,homey,50,c_dkgray,c_dkgray,false) 
-draw_text_colour(homex-20,homey-10,string(name),c_white,c_white,c_white,c_white,1)
+//draw_circle_colour(homex,homey,50,c_dkgray,c_dkgray,false) 
+//draw_text_colour(homex-20,homey-10,string(name),c_white,c_white,c_white,c_white,1)
 if obj_camera.text {
 draw_text_transformed(obj_camera.x,obj_camera.y+name*90+obj_camera.scroll,string(hungry),2,2,0)
 draw_text_transformed(obj_camera.x+500,obj_camera.y+name*90+obj_camera.scroll,"hel:"+string(Health),2,2,0)

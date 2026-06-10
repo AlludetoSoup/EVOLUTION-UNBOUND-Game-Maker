@@ -1,5 +1,4 @@
 /// @description Insert description here
-
 font = font_add("Arial",30,false,true,1,1)
 font2 = font_add("Arial",45,false,true,1,1)
 font3 = font_add("Arial",45,false,true,1,1)

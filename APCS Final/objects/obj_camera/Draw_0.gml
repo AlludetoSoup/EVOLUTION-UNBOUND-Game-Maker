@@ -1,10 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-if spect {
-draw_set_font(font2)
 draw_set_halign(fa_center)
 draw_set_valign(fa_center)
+if spect {
+draw_set_font(font2)
 draw_text_colour(x+600,y-900,string_concat(string(obj_camera.spect_inst.name)),c_black,c_black,c_black,c_black,1)
 draw_set_font(font)
 draw_text_colour(x+600,y-800,string_concat("Health: ",string(obj_camera.spect_inst.Health)),c_black,c_black,c_black,c_black,1)
