@@ -31,6 +31,7 @@ draw_text_colour(x+600,y+775,string_concat("Strength: ",string(obj_camera.spect_
 
 }
 
-
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
 draw_set_font(font3)
 draw_text_colour(x-(950*(obj_camera.size/2000)),y+(925*(obj_camera.size/2000)),string_concat("Population: ",string(instance_number(obj_animal))),c_black,c_black,c_black,c_black,1)
