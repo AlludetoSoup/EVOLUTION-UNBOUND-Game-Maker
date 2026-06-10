@@ -1,5 +1,6 @@
 fail=false
 a_species=-1
+alarm[0]=2000
 prompt="blue blob 64-bit pixel art full front profile view clean lines isolated on a solid pink background"
 encoded_prompt = string_replace_all(prompt, " ", "%20")
 ask=0

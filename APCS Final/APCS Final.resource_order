@@ -57,6 +57,7 @@
     {"name":"spr_decrease10","order":23,"path":"sprites/spr_decrease10/spr_decrease10.yy",},
     {"name":"spr_dirt","order":16,"path":"sprites/spr_dirt/spr_dirt.yy",},
     {"name":"spr_egg","order":17,"path":"sprites/spr_egg/spr_egg.yy",},
+    {"name":"spr_fail","order":29,"path":"sprites/spr_fail/spr_fail.yy",},
     {"name":"spr_increase1","order":18,"path":"sprites/spr_increase1/spr_increase1.yy",},
     {"name":"spr_increase10","order":24,"path":"sprites/spr_increase10/spr_increase10.yy",},
     {"name":"spr_loading","order":28,"path":"sprites/spr_loading/spr_loading.yy",},
