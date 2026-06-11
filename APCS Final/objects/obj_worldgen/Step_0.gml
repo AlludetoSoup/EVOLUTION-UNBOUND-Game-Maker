@@ -18,10 +18,10 @@ for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
 	for (var cellY = cellY_min; cellY < cellY_max; cellY++) {
 		if obj_time_controller.day_past >0{
 			if not rainingGrid[# cellX, cellY] {
-				cloudGrid[# cellX,cellY] += (irandom_range(0,1)/50)
+				//cloudGrid[# cellX,cellY] += (irandom_range(0,1)/50)
 			}
 			else {
-				cloudGrid[# cellX,cellY] -= (irandom_range(0,1)/10)	
+				//cloudGrid[# cellX,cellY] -= (irandom_range(0,1)/10)	
 			}
 				
 			
@@ -39,10 +39,10 @@ for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
 		if cloudGrid[# cellX,cellY] > 0.7 and not rainingGrid[# cellX,cellY] {
 			if irandom_range((cloudGrid[# cellX,cellY]*100)-70,20) = 20{
 				if avg_temp(cellX,cellY)+obj_time_controller.temp_increase > 0.25{
-					rainingGrid[# cellX,cellY] = 1
+					//rainingGrid[# cellX,cellY] = 1
 				}
 				else{
-					rainingGrid[# cellX,cellY] = 2
+					//rainingGrid[# cellX,cellY] = 2
 				}
 			}
 		}
@@ -63,10 +63,10 @@ for (var cellX = cellX_min; cellX < cellX_max; cellX++) {
 		if cloudGrid[# cellX,cellY] > 0.7 and not rainingGrid[# cellX,cellY] {
 			if irandom_range((cloudGrid[# cellX,cellY]*100)-70,20) = 20{
 				if avg_temp(cellX,cellY)+obj_time_controller.temp_increase > 0.25{
-					rainingGrid[# cellX,cellY] = 1
+					//rainingGrid[# cellX,cellY] = 1
 				}
 				else{
-					rainingGrid[# cellX,cellY] = 2
+					//rainingGrid[# cellX,cellY] = 2
 				}
 			}
 		}
